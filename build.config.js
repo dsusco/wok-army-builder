@@ -3,6 +3,11 @@ module.exports = {
   compile_dir: 'dist',
 
   app_files: {
+    grunt: [
+      'Gruntfile.js',
+      'build.config.js'
+    ],
+
     js: [
       'src/**/*.js',
       '!src/**/*.spec.js',
@@ -24,7 +29,7 @@ module.exports = {
     ],
 
     less: [
-      'src/less/main.less'
+      'src/less/app.less'
     ]
   },
 
