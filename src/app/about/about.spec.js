@@ -1,5 +1,5 @@
-describe('home section', function () {
-  beforeEach(module('ngBoilerplate.home'));
+describe('about section', function () {
+  beforeEach(module('ngBoilerplate.about'));
 
   it('should have a dummy test', inject(function () {
     expect(true).toBeTruthy();

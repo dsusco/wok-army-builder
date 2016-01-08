@@ -8,6 +8,18 @@ module.exports = function (grunt) {
     },
     userConfig = require('./build.config.js'),
     taskConfig = {
+      connect: {
+        app: {
+          options: {
+            base: '<%= build_dir %>',
+            livereload: true,
+            open: true,
+            port: 3000
+          }
+        }
+      },
+
+
       /**
        * We read in our `package.json` file so we can access the package name and
        * version. It's already there, so we don't repeat ourselves here.
@@ -482,7 +494,7 @@ module.exports = function (grunt) {
     'uglify',
     'index:compile'
   ]);
-  grunt.registerTask('watch', ['build', 'karma:unit', 'delta']);
+  grunt.registerTask('watch', ['build', 'karma:unit', 'connect', 'delta']);
 
   grunt.registerMultiTask('index', 'Process index.html template', function index() {
     var

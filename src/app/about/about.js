@@ -1,12 +1,10 @@
 angular
   .module('ngBoilerplate.about', [
-    'ui.router',
-    'placeholders',
-    'ui.bootstrap'
+    'ui.router'
   ])
   .config(function config($stateProvider) {
     $stateProvider.state('about', {
-      data: { pageTitle: 'What is It?' },
+      data: { pageTitle: 'About' },
       url: '/about',
       views: {
         main: {
@@ -16,10 +14,5 @@ angular
       }
     });
   })
-  .controller('AboutCtrl', ['$scope', function AboutCtrl($scope) {
-    $scope.dropdownDemoItems = [
-      'The first choice!',
-      'And another choice for you.',
-      'but wait! A third!'
-    ];
+  .controller('AboutCtrl', [function AboutCtrl() {
   }]);
