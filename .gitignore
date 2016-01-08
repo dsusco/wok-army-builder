@@ -1,6 +1,4 @@
-*.sw*
-*~
+bower_components/
 build/
-bin/
+dist/
 node_modules/
-vendor/
