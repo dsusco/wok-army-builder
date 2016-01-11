@@ -16,13 +16,10 @@ module.exports = function (grunt) {
             'package.json',
             'bower.json'
           ],
-          commit: false,
           commitFiles: [
             'package.json',
             'bower.json'
-          ],
-          createTag: false,
-          push: false
+          ]
         }
       },
 
