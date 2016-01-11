@@ -1,27 +1,15 @@
 <!DOCTYPE html>
-<html data-ng-app="ngBoilerplate" data-ng-controller="AppCtrl">
+<html data-ng-app="wokArmyBuilder" data-ng-controller="ArmyBuilderCtrl">
   <head><% styles.forEach(function (file) { %>
     <link href="<%= file %>" rel="stylesheet"><% }); %>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title data-ng-bind="pageTitle">_</title>
+    <title>Wrath of Kings Army Builder</title>
   </head>
   <body>
     <div class="container">
-      <div class="navbar navbar-default">
-        <div>
-          <ul class="nav navbar-nav">
-            <li data-ui-sref-active="active">
-              <a data-ui-sref="home">Home</a>
-            </li>
-            <li data-ui-sref-active="active">
-              <a data-ui-sref="about">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
     </div>
 
     <div class="container" data-ui-view="main"></div>
