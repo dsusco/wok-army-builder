@@ -8,28 +8,28 @@ module.exports = {
       'build.config.js'
     ],
 
+    html: [
+      'src/index.html'
+    ],
+
     js: [
       'src/**/*.js',
       '!src/**/*.spec.js',
       '!src/assets/**/*.js'
     ],
-    jsunit: [
+    js_unit: [
       'src/**/*.spec.js'
-    ],
-
-    atpl: [
-      'src/app/**/*.tpl.html'
-    ],
-    ctpl: [
-      'src/common/**/*.tpl.html'
-    ],
-
-    html: [
-      'src/index.html'
     ],
 
     less: [
       'src/less/app.less'
+    ],
+
+    tpl_app: [
+      'src/app/**/*.tpl.html'
+    ],
+    tpl_common: [
+      'src/common/**/*.tpl.html'
     ]
   },
 

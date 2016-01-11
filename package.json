@@ -1,6 +1,8 @@
 {
-  "author": "wok-army-builder",
+  "name": "wok-army-builder",
   "version": "0.0.0",
+  "license": "ISC",
+  "author": "David Susco <dsusco@gmail.com>",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bump": "^0.7.0",
@@ -18,7 +20,7 @@
     "grunt-ng-annotate": "^1.0.1",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
-    "karma-firefox-launcher": "^0.1.7",
+    "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.6"
   }
 }
