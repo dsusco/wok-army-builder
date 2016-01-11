@@ -46,11 +46,11 @@ module.exports = function (grunt) {
           },
           src: [
             '<%= vendor_files.js %>',
-            'grunt_tpls/module_prefix.tpl.js',
+            'grunt_tpls/module-prefix.tpl.js',
             '<%= build_dir %>/src/**/*.js',
             '<%= html2js.app.dest %>',
             '<%= html2js.common.dest %>',
-            'grunt_tpls/module_suffix.tpl.js'
+            'grunt_tpls/module-suffix.tpl.js'
           ],
           dest: '<%= compile_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.js'
         }
