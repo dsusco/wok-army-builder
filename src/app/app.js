@@ -2,9 +2,7 @@ angular
   .module('wokArmyBuilder', [
     'templates-app',
     'templates-common',
-    'ui.router'
+    'wokArmyBuilder.tabs'
   ])
-  .run(function run() {
-  })
   .controller('ArmyBuilderCtrl', [function ArmyBuilderCtrl() {
   }]);

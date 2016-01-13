@@ -42,7 +42,7 @@ module.exports = {
   vendor_files: {
     js: [
       'bower_components/angular/angular.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-ui-utils/modules/route/route.js'
     ],
@@ -51,6 +51,12 @@ module.exports = {
     ],
 
     assets: [
+      'bower_components/Font-Awesome/fonts/FontAwesome.otf',
+      'bower_components/Font-Awesome/fonts/fontawesome-webfont.eot',
+      'bower_components/Font-Awesome/fonts/fontawesome-webfont.svg',
+      'bower_components/Font-Awesome/fonts/fontawesome-webfont.ttf',
+      'bower_components/Font-Awesome/fonts/fontawesome-webfont.woff',
+      'bower_components/Font-Awesome/fonts/fontawesome-webfont.woff2'
     ]
   }
 };

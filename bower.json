@@ -6,6 +6,7 @@
     "angular-bootstrap": "~0.14.3",
     "angular-mocks": "~1.4.8",
     "angular-ui-router": "~0.2.15",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "Font-Awesome": "~4.5.0"
   }
 }
