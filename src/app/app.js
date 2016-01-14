@@ -17,8 +17,26 @@ angular
               $scope.army = army;
               $scope.models = models;
 
-              $scope.$on('characterChange', function characterChange(event, model, value) {
-                $scope.$broadcast('toggleCharacter', model, value, event.coreList);
+              $scope.$on('characterChange', function (event, model, value) {
+                var modelIndex, maxValue;
+
+                if (event.list === 'Core List') {
+                  $scope.$broadcast('toggleCharacter', model, value, true);
+                } else {
+                  modelIndex = models.Specialist.indexOf(model);
+
+                  maxValue =
+                    Object.getOwnPropertyNames(army.lists).map(function (list) {
+                      if (list !== 'Core List' && list !== event.list) {
+                        return army.lists[list].Specialist[modelIndex];
+                      }
+                    }).concat(value)
+                      .reduce(function (previous, current) {
+                        return current === undefined || previous > current ? previous : current;
+                      });
+
+                  $scope.$broadcast('toggleCharacter', model, maxValue, false);
+                }
               });
 
               $scope.$watch('army.gameSize', army.setLists);
@@ -81,11 +99,11 @@ angular
         $scope.options = 0;
 
         $scope.$on('characterChange', function (event) {
-          event.coreList = false;
+          event.list = $scope.list;
         });
 
-        $scope.$on('toggleCharacter', function (event, model, value, coreList) {
-          if (coreList) {
+        $scope.$on('toggleCharacter', function (event, model, value, isCoreListCharacter) {
+          if (isCoreListCharacter) {
             $scope.$broadcast('checkCharacterSelected', model, value);
           }
         });
@@ -119,11 +137,11 @@ angular
         $scope.ranks = 0;
 
         $scope.$on('characterChange', function (event) {
-          event.coreList = true;
+          event.list = $scope.list;
         });
 
-        $scope.$on('toggleCharacter', function (event, model, value, coreList) {
-          if (!coreList) {
+        $scope.$on('toggleCharacter', function (event, model, value, isCoreListCharacter) {
+          if (!isCoreListCharacter) {
             $scope.$broadcast('checkCharacterSelected', model, value);
           }
         });
@@ -157,8 +175,8 @@ angular
           }
         });
 
-        $scope.$on('checkRemainingRanks', function (event, optionList, remainingRanks) {
-          if (optionList && $scope.model.traits === undefined) {
+        $scope.$on('checkRemainingRanks', function (event, isOptionList, remainingRanks) {
+          if (isOptionList && $scope.model.traits === undefined) {
             $scope.notEnoughRanks = $scope.model.rank * 3 > remainingRanks;
           } else {
             $scope.notEnoughRanks = $scope.model.rank > remainingRanks;
