@@ -10,7 +10,13 @@
   </head>
 
   <body>
-    <div class="container" data-ui-view></div>
+    <div class="container">
+      <header class="hidden-print row">
+        <img class="img-responsive" src="/assets/images/WoK-header.png">
+      </header>
+
+      <div class="row" data-ng-controller="ArmyBuilderController as armyBuilder" data-ui-view></div>
+    </div>
     <% scripts.forEach(function (file) { %>
     <script src="<%= file %>"></script><% }); %>
   </body>

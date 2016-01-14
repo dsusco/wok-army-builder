@@ -12,38 +12,8 @@ angular
         url: '',
         views: {
           '': {
-            controller: ['$scope', 'army', 'models', function ($scope, army, models) {
+            controller: ['$scope', function ($scope) {
               $scope.active = [true, false, false];
-              $scope.army = army;
-              $scope.models = models;
-
-              $scope.$on('characterChange', function (event, model, value) {
-                var modelIndex, maxValue;
-
-                if (event.list === 'Core List') {
-                  $scope.$broadcast('toggleCharacter', model, value, true);
-                } else {
-                  modelIndex = models.Specialist.indexOf(model);
-
-                  maxValue =
-                    Object.getOwnPropertyNames(army.lists).map(function (list) {
-                      if (list !== 'Core List' && list !== event.list) {
-                        return army.lists[list].Specialist[modelIndex];
-                      }
-                    }).concat(value)
-                      .reduce(function (previous, current) {
-                        return current === undefined || previous > current ? previous : current;
-                      });
-
-                  $scope.$broadcast('toggleCharacter', model, maxValue, false);
-                }
-              });
-
-              $scope.$watch('army.gameSize', army.setLists);
-
-              $scope.$watch('army.faction', function (faction) {
-                models.load(faction, army.setLists);
-              });
 
               $scope.$watchGroup(['army.gameSize', 'army.faction'], function (values) {
                 if (values.every(function (value) { return value !== undefined; })) {
@@ -52,20 +22,20 @@ angular
                 }
               });
             }],
-            templateUrl: 'tabs/tabs.tpl.html'
+            templateUrl: 'tabs.tpl.html'
           },
           'faction@tabs': {
             controller: ['$scope', 'factions', 'gameSizes', function ($scope, factions, gameSizes) {
               $scope.factions = factions;
               $scope.gameSizes = gameSizes;
             }],
-            templateUrl: 'tabs/faction.tpl.html'
+            templateUrl: 'faction.tpl.html'
           },
           'army@tabs': {
-            templateUrl: 'tabs/army.tpl.html'
+            templateUrl: 'army.tpl.html'
           },
           'recordSheet@tabs': {
-            templateUrl: 'tabs/record-sheet.tpl.html'
+            templateUrl: 'record-sheet.tpl.html'
           }
         }
       });
@@ -92,6 +62,39 @@ angular
       Options: 12
     }
   })
+
+  .controller('ArmyBuilderController', ['$scope', 'army', 'models', function ($scope, army, models) {
+    $scope.army = army;
+    $scope.models = models;
+
+    $scope.$on('characterChange', function (event, model, value) {
+      var modelIndex, maxValue;
+
+      if (event.list === 'Core List') {
+        $scope.$broadcast('toggleCharacter', model, value, true);
+      } else {
+        modelIndex = models.Specialist.indexOf(model);
+
+        maxValue =
+          Object.getOwnPropertyNames(army.lists).map(function (list) {
+            if (list !== 'Core List' && list !== event.list) {
+              return army.lists[list].Specialist[modelIndex];
+            }
+          }).concat(value)
+            .reduce(function (previous, current) {
+              return current === undefined || previous > current ? previous : current;
+            });
+
+        $scope.$broadcast('toggleCharacter', model, maxValue, false);
+      }
+    });
+
+    $scope.$watch('army.gameSize', army.setLists);
+
+    $scope.$watch('army.faction', function (faction) {
+      models.load(faction, army.setLists);
+    });
+  }])
 
   .directive('wokOptionList', function () {
     return {
