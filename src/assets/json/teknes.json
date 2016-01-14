@@ -1,0 +1,68 @@
+{
+  "Leader": [
+    { "name": "Union Boss",
+      "rank": 1,
+      "traits": ["Union Member"]
+    },
+    { "name": "The Ironward",
+      "rank": 2,
+      "traits": ["Union Member"],
+      "character": true
+    },
+    { "name": "Defender Linemen Cotroller",
+      "rank": 1,
+      "traits": ["Citizen"]
+    },
+    { "name": "Defender Raeth Sevisk",
+      "rank": 2,
+      "traits": ["Citizen"],
+      "character": true
+    },
+    { "name": "Addanii Brood Mastermind",
+      "rank": 1,
+      "traits": ["Addanii"]
+    },
+    { "name": "Timoshkin",
+      "rank": 2,
+      "traits": ["Addanii"],
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Union Worker",
+      "rank": 1,
+      "traits": ["Union Member"]
+    },
+    { "name": "Defender Lineman",
+      "rank": 1,
+      "traits": ["Citizen"]
+    },
+    { "name": "Addanii Brood Warrior",
+      "rank": 2,
+      "traits": ["Addanii"]
+    }
+  ],
+  "Specialist": [
+    { "name": "The Zaalak",
+      "rank": 1
+    },
+    { "name": "Galvanic Defender",
+      "rank": 1
+    },
+    { "name": "C.A.G.E.",
+      "rank": 2
+    },
+    { "name": "Sorik the Unnished",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Mighty Taur",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Lineman Boris",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

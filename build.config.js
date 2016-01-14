@@ -51,12 +51,6 @@ module.exports = {
     ],
 
     assets: [
-      'bower_components/Font-Awesome/fonts/FontAwesome.otf',
-      'bower_components/Font-Awesome/fonts/fontawesome-webfont.eot',
-      'bower_components/Font-Awesome/fonts/fontawesome-webfont.svg',
-      'bower_components/Font-Awesome/fonts/fontawesome-webfont.ttf',
-      'bower_components/Font-Awesome/fonts/fontawesome-webfont.woff',
-      'bower_components/Font-Awesome/fonts/fontawesome-webfont.woff2'
     ]
   }
 };

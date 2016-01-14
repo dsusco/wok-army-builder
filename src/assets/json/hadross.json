@@ -1,0 +1,68 @@
+{
+  "Leader": [
+    { "name": "Deepmen Kaxes",
+      "rank": 1,
+      "traits": ["Deepmen"]
+    },
+    { "name": "Torvosh the Bannerman",
+      "rank": 2,
+      "traits": ["Deepmen"],
+      "character": true
+    },
+    { "name": "Gutter Friar",
+      "rank": 1,
+      "traits": ["Sevridan"]
+    },
+    { "name": "Ooroth of Sysor Deep",
+      "rank": 2,
+      "traits": ["Sevridan"],
+      "character": true
+    },
+    { "name": "Frenzy Charger",
+      "rank": 1,
+      "traits": ["Carcharian"]
+    },
+    { "name": "Gar, the Gladiator",
+      "rank": 2,
+      "traits": ["Carcharian"],
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Deepmen Guardian",
+      "rank": 1,
+      "traits": ["Deepmen"]
+    },
+    { "name": "Sevridan Gutter",
+      "rank": 2,
+      "traits": ["Sevridan"]
+    },
+    { "name": "Carcharian Frenzy",
+      "rank": 2,
+      "traits": ["Carcharian"]
+    }
+  ],
+  "Specialist": [
+    { "name": "Deep Caller",
+      "rank": 1
+    },
+    { "name": "Calith Reaver",
+      "rank": 1
+    },
+    { "name": "Oresund Cavalier",
+      "rank": 2
+    },
+    { "name": "The Oracle of Ulloth",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ephramaki, the Deepcaller Lord",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ilva, the Syren of Kaldeth Strait",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

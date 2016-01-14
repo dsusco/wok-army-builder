@@ -1,1 +1,56 @@
-r
+<div class="table-responsive">
+  <table class="table">
+    <caption>Conquest of Kings Records Sheet</caption>
+    <tbody>
+      <tr>
+        <td><b>Player Name:</b></td>
+        <td><b>Faction:</b> {{army.faction}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Round</th>
+        <th>Game Result</th>
+        <th>Motivation</th>
+        <th>Leadership Points</th>
+        <th>Rank Points</th>
+        <th>Opponent</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ng-repeat="round in [1, 2, 3, 4, 5]">
+        <td class="text-center">{{round}}</td>
+        <td class="text-center">W/L/T</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-responsive" data-ng-repeat="(list, types) in army.lists">
+  <table class="table">
+    <caption>{{list}}</caption>
+    <thead>
+      <tr>
+        <th>Model Name</th>
+        <th>Type</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody data-ng-repeat="(type, modelCounts) in types" >
+      <tr data-ng-repeat="model in models[type]" data-ng-if="modelCounts[$index]">
+        <td>{{model.name}}</td>
+        <td>Rank {{model.rank}}{{model.character ? ' Character' : '' }} {{type}}</td>
+        <td>{{modelCounts[$index]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

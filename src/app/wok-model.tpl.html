@@ -1,0 +1,5 @@
+{{model.name}}
+(Rank {{model.rank}}{{model.character ? ' Character' : '' }})
+<input class="btn btn-default" type="button" value="-" data-ng-click="add(-1)" data-ng-disabled="number < 1">
+{{number}}
+<input class="btn btn-default" type="button" value="+" data-ng-click="add(1)" data-ng-disabled="notEnoughRanks || selectedCharacter">
