@@ -1,6 +1,8 @@
 /**/
 @import '../../bower_components/bootstrap/less/bootstrap.less';
 
+@brand-primary: #302015;
+
 @body-bg: #f8e8c9;
 
 @font-size-base:  14px;
@@ -19,7 +21,15 @@
 
 @headings-font-weight: bold;
 
+@table-border-color: #938b79;
+
+@btn-primary-border: @table-border-color;
+
 @input-border-radius: 0;
+
+@container-tablet:        (720px + @grid-gutter-width);
+@container-desktop:       (960px + @grid-gutter-width);
+@container-large-desktop: (1080px + @grid-gutter-width);
 
 @nav-link-hover-bg: none;
 
@@ -27,7 +37,10 @@
 @nav-pills-active-link-hover-bg:    none;
 @nav-pills-active-link-hover-color: #f6c51c;
 
-@table-border-color: #938b79;
+@panel-bg: none;
+
+@panel-primary-text:   #d3b7a7;
+@panel-primary-border: @table-border-color;
 
 /**/
 @import '../../bower_components/Font-Awesome/less/font-awesome.less';
@@ -41,7 +54,7 @@
 @nav-bg-top:    #534e4b;
 
 /**/
-#game-size { max-width: 392px; }
+#game-size { max-width: 28em; }
 
 .nav-pills {
   .hidden-print();
@@ -73,24 +86,15 @@
 
 .faction {
   label {
-    border-radius: @border-radius-large;
+    border: 1px solid @table-border-color;
+    background: #d1c5ad;
     cursor: pointer;
     margin: 0;
-    padding: 10px;
+    padding: 9px;
     position: relative;
 
     &:hover, &.selected {
-      &:before {
-        .opacity(.25);
-        background: #fff;
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-      }
+      background: lighten(#d1c5ad, 12.5%);
     }
   }
 }
@@ -108,6 +112,37 @@
     text-align: center;
     text-transform: uppercase;
   }
+}
+
+.panel-body { padding-bottom: 0; }
+
+.model {
+  height: 3em;
+  line-height: 2.5;
+  padding-right: 8em;
+  position: relative;
+
+  .name {
+    display: block;
+    overflow: hidden;
+    margin-right: 0;
+    white-space: nowrap;
+  }
+
+  .actions {
+    background: inherit;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .number {
+    display: inline-block;
+    text-align: center;
+    width: 2em;
+  }
+
+  .btn { width: 2.5em; }
 }
 
 @media print {
