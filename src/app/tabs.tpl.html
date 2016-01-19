@@ -1,15 +1,13 @@
 <div data-uib-tabset data-type="pills">
   <div data-uib-tab data-active="active[0]" data-heading="Faction">
-    <div class="col-xs-12" data-ui-view="faction"></div>
+    <div class="col-xs-12 hidden-print" data-ui-view="faction"></div>
   </div>
 
   <div data-uib-tab data-active="active[1]" data-disable="!enableArmy" data-heading="Army">
-    <div class="col-xs-12" data-ui-view="army"></div>
+    <div class="col-xs-12 hidden-print" data-ui-view="army"></div>
   </div>
 
   <div data-uib-tab data-active="active[2]" data-disable="!enableArmy" data-heading="Record Sheet">
-    <div class="col-xs-12" data-ui-view="recordSheet"></div>
+    <div class="col-xs-12 visible-print-block" data-ui-view="recordSheet"></div>
   </div>
 </div>
-
-{{army}}
