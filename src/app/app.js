@@ -224,17 +224,17 @@ angular
       if (army.gameSize !== undefined && army.faction !== undefined && army.faction === models.faction) {
         army.lists = {
           'Core List': {
-            Leader: Array(models.Leader.length).fill(0),
-            Infantry: Array(models.Infantry.length).fill(0),
-            Specialist: Array(models.Specialist.length).fill(0)
+            Leader: models.Leader.map(function () { return 0; }),
+            Infantry: models.Infantry.map(function () { return 0; }),
+            Specialist: models.Specialist.map(function () { return 0; })
           }
         };
 
         if (army.gameSize.Leader > 2) {
           [1, 2].forEach(function (i) {
             army.lists['Options List #' + i] = {
-              Infantry: Array(models.Infantry.length).fill(0),
-              Specialist: Array(models.Specialist.length).fill(0)
+              Infantry: models.Infantry.map(function () { return 0; }),
+              Specialist: models.Specialist.map(function () { return 0; })
             };
           });
         }
