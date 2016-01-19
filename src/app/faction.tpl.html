@@ -8,6 +8,6 @@
 <div class="faction form-group text-center" data-ng-repeat="faction in factions">
   <label data-ng-class="{ selected: faction === army.faction }">
     <input class="sr-only" type="radio" value="{{faction}}" data-ng-model="army.faction">
-    <img class="img-responsive" alt="{{faction}}" src="/assets/images/{{faction}}.png">
+    <img class="img-responsive" alt="{{faction}}" src="{{faction | factionImageFilter}}">
   </label>
 </div>

@@ -194,6 +194,18 @@ angular
     };
   })
 
+  .filter('factionImageFilter', function () {
+    return function (faction) {
+      if (faction !== undefined) {
+        faction = '/assets/images/' + faction.toLowerCase().replace(/[^0-9a-z]+/g, '-') + '.png';
+      } else {
+        faction = '';
+      }
+
+      return faction;
+    };
+  })
+
   .filter('optionsFilter', function () {
     return function (options) {
       options /= 3;
