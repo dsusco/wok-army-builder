@@ -7,8 +7,8 @@
   "license": "ISC",
   "author": "David Susco <dsusco@gmail.com>",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/dsusco/wok-army-builder.git"
+    "type": "git",
+    "url": "https://github.com/dsusco/wok-army-builder.git"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -25,6 +25,7 @@
     "grunt-jscs": "^2.6.0",
     "grunt-karma": "^0.12.1",
     "grunt-ng-annotate": "^1.0.1",
+    "grunt-shell": "^1.1.2",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",

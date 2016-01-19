@@ -333,6 +333,12 @@ module.exports = function (grunt) {
         }
       },
 
+      shell: {
+        update: {
+          command: '~/google_appengine/appcfg.py update .'
+        }
+      },
+
       uglify: {
         compile: {
           options: {
@@ -360,6 +366,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-jscs');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ng-annotate');
+  grunt.loadNpmTasks('grunt-shell');
 
   grunt.registerTask('default', ['build', 'compile']);
 
@@ -393,6 +400,11 @@ module.exports = function (grunt) {
     'compile',
     'connect:compile',
     'delta'
+  ]);
+
+  grunt.registerTask('update', [
+    'compile',
+    'shell:update'
   ]);
 
   grunt.renameTask('watch', 'delta');
