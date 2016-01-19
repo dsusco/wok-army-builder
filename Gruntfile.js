@@ -14,8 +14,7 @@ module.exports = function (grunt) {
         options: {
           files: [
             'package.json',
-            'bower.json',
-            'app.yaml'
+            'bower.json'
           ],
           commitFiles: [
             'package.json',

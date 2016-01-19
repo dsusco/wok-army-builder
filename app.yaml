@@ -1,5 +1,5 @@
 application: wok-army-builder
-version: 0.0.1
+version: production
 runtime: python27
 api_version: 1
 threadsafe: true
