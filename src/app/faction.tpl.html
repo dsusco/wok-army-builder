@@ -1,12 +1,12 @@
 <div class="form-group">
   <label class="sr-only" for="game-size">Game Size</label>
   <select id="game-size" class="form-control center-block" data-ng-model="army.gameSize" data-ng-options="gameSize for (gameSize, types) in gameSizes">
-      <option value="" data-ng-if="army.gameSize === undefined">Please select a game size…</option>
+      <option disabled selected value="">Please select a game size…</option>
   </select>
 </div>
 
 <div class="faction form-group text-center" data-ng-repeat="faction in factions">
-  <label>
+  <label data-ng-class="{ selected: faction === army.faction }">
     <input class="sr-only" type="radio" value="{{faction}}" data-ng-model="army.faction">
     <img class="img-responsive" alt="{{faction}}" src="/assets/images/{{faction}}.png">
   </label>
