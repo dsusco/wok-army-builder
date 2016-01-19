@@ -1,0 +1,15 @@
+application: wok-army-builder
+version: 0.0.1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /(|index\.html)
+    static_files: dist/index.html
+    upload: dist/index.html
+  - url: /assets
+    static_dir: dist/assets
+
+skip_files:
+  - ^[^(dist\/)]
