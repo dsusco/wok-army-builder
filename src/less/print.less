@@ -1,0 +1,26 @@
+@media print {
+  body {
+    font-family: @font-family-serif;
+  }
+
+  abbr[title]:after { content: ''; }
+
+  .table {
+    > caption { padding: 0; }
+
+    > thead, > tbody, > tfoot {
+      > tr {
+        > th, > td {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &.table-bordered {
+      th, td { border-color: @text-color !important; }
+    }
+  }
+
+  .tab-content > .tab-pane { display: block !important; }
+}
