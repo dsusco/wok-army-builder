@@ -36,6 +36,20 @@ abbr[title], abbr[data-original-title] {
   }
 }
 
+.panel-heading {
+  padding: 0;
+
+  > .panel-title > a {
+    display: block;
+    padding: @panel-heading-padding;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      outline: none;
+    }
+  }
+}
+
 .tab-content {
   padding-bottom: @line-height-computed;
   padding-top: @line-height-computed;
