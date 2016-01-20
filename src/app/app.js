@@ -111,9 +111,11 @@ angular
           }
         });
 
-        Object.getOwnPropertyNames($scope.army.lists[$scope.list]).forEach(function (type) {
-          $scope.$watchCollection('army.lists[list]["' + type + '"]', function (numbers, oldNumbers) {
-            function reduceOptions(previous, current, index) {
+        $scope.$watch('army.lists[list]', function (list) {
+          var options = 0;
+
+          Object.getOwnPropertyNames(list).forEach(function (type) {
+            options += list[type].reduce(function (previous, current, index) {
               if (index === 1) {
                 previous *= $scope.models[type][0].rank;
 
@@ -123,13 +125,13 @@ angular
               if ($scope.models[type][index].traits === undefined) { current *= 3; }
 
               return previous + current * $scope.models[type][index].rank;
-            }
-
-            $scope.options += numbers.reduce(reduceOptions) - oldNumbers.reduce(reduceOptions);
-
-            $scope.$broadcast('checkRemainingRanks', true, $scope.army.gameSize.Options - $scope.options);
+            });
           });
-        });
+
+          $scope.options = options;
+
+          $scope.$broadcast('checkRemainingRanks', true, $scope.army.gameSize.Options - $scope.options);
+        }, true);
       }]
     };
   })
