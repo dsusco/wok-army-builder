@@ -244,7 +244,7 @@ angular
           }
         };
 
-        if (army.gameSize.Leader > 2) {
+        if (army.gameSize === 'Skirmish' || army.gameSize === 'Battle') {
           [1, 2].forEach(function (i) {
             army.lists['Options List #' + i] = {
               Infantry: models.Infantry.map(return0),
