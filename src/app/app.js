@@ -2,66 +2,8 @@ angular
   .module('wokArmyBuilder', [
     'templates-app',
     'templates-common',
-    'ui.bootstrap',
-    'ui.router'
+    'wokArmyBuilder.layout'
   ])
-
-  .config(['$stateProvider', function ($stateProvider) {
-    $stateProvider
-      .state('tabs', {
-        url: '',
-        views: {
-          '': {
-            controller: ['$scope', function ($scope) {
-              $scope.active = [true, false, false];
-
-              $scope.$watchGroup(['army.gameSize', 'army.faction'], function (values) {
-                if (values.every(function (value) { return value !== undefined; })) {
-                  $scope.enableArmy = true;
-                  $scope.active[1] = true;
-                }
-              });
-            }],
-            templateUrl: 'tabs.tpl.html'
-          },
-          'faction@tabs': {
-            controller: ['$scope', 'factions', 'gameSizes', function ($scope, factions, gameSizes) {
-              $scope.factions = factions;
-              $scope.gameSizes = gameSizes;
-            }],
-            templateUrl: 'faction.tpl.html'
-          },
-          'army@tabs': {
-            templateUrl: 'army.tpl.html'
-          },
-          'recordSheet@tabs': {
-            templateUrl: 'record-sheet.tpl.html'
-          }
-        }
-      });
-  }])
-
-  .constant('factions', ['Goritsi', 'Hadross', 'Nasier', 'Shael Han', 'Teknes'])
-
-  .constant('gameSizes', {
-    Intro: {
-      Leader: 2,
-      Infantry: 12,
-      Specialist: 2
-    },
-    Skirmish: {
-      Leader: 3,
-      Infantry: 18,
-      Specialist: 2,
-      Options: 6
-    },
-    Battle: {
-      Leader: 5,
-      Infantry: 24,
-      Specialist: 4,
-      Options: 12
-    }
-  })
 
   .controller('ArmyBuilderController', ['$scope', 'army', 'models', function ($scope, army, models) {
     $scope.army = army;
