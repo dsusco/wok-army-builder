@@ -1,4 +1,4 @@
-<div class="table-responsive">
+<div class="table-responsive" data-ng-if="Object.keys(army.gameSize).length < 1">
   <table class="table table-bordered">
     <caption>Conquest of Kings Records Sheet</caption>
     <tbody>
@@ -10,7 +10,7 @@
   </table>
 </div>
 
-<div class="table-responsive">
+<div class="table-responsive" data-ng-if="Object.keys(army.gameSize).length < 1">
   <table class="table table-bordered">
     <thead>
       <tr>

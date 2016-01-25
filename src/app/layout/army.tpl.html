@@ -7,7 +7,7 @@
         <div data-ng-repeat="(type, numbers) in types" data-uib-accordion-group data-is-open="$first" data-panel-class="panel-primary" data-wok-type="type">
           <div data-uib-accordion-heading>
             {{type}}
-            <span class="pull-right">({{ranks}}<span data-ng-if="army.gameSize[type]">/{{army.gameSize[type]}}</span>)</span>
+            <span class="pull-right">({{ranks}}<span data-ng-if="Object.keys(army.gameSize).length < 1">/{{army.gameSize[type]}}</span>)</span>
           </div>
 
           <div class="model" data-ng-repeat="model in models[type]" data-wok-model="model" data-number="numbers[$index]">{{model.name}}</div>
