@@ -2,7 +2,9 @@ angular
   .module('wokArmyBuilder', [
     'templates-app',
     'templates-common',
-    'wokArmyBuilder.layout'
+    'wokArmyBuilder.army',
+    'wokArmyBuilder.layout',
+    'wokArmyBuilder.models'
   ])
 
   .controller('ArmyBuilderController', ['$scope', 'army', 'models', function ($scope, army, models) {
@@ -146,70 +148,4 @@ angular
       },
       templateUrl: 'wok-model.tpl.html'
     };
-  })
-
-  .filter('factionImageFilter', function () {
-    return function (faction) {
-      if (faction !== undefined) {
-        faction = '/assets/images/' + faction.toLowerCase().replace(/[^0-9a-z]+/g, '-') + '.png';
-      } else {
-        faction = '';
-      }
-
-      return faction;
-    };
-  })
-
-  .filter('optionsFilter', function () {
-    return function (options) {
-      options /= 3;
-
-      return options.toFixed(1)
-        .replace(/\.0$/, '')
-        .replace(/0?\.3$/, '⅓')
-        .replace(/0?\.7$/, '⅔');
-    };
-  })
-
-  .service('army', ['models', function (models) {
-    var army = this;
-
-    army.setLists = function () {
-      function return0() { return 0; }
-
-      if (army.gameSize !== undefined && army.faction !== undefined && army.faction === models.faction) {
-        army.lists = {
-          'Core List': {
-            Leader: models.Leader.map(return0),
-            Infantry: models.Infantry.map(return0),
-            Specialist: models.Specialist.map(return0)
-          }
-        };
-
-        if (army.gameSize.Options !== undefined) {
-          [1, 2].forEach(function (i) {
-            army.lists['Options List #' + i] = {
-              Infantry: models.Infantry.map(return0),
-              Specialist: models.Specialist.map(return0)
-            };
-          });
-        }
-      }
-    };
-  }])
-
-  .service('models', ['$http', function ($http) {
-    var models = this;
-
-    models.load = function (faction, successCallback) {
-      if (faction !== undefined) {
-        $http.get('/assets/json/' + faction.toLowerCase().replace(/[^0-9a-z]+/, '-') + '.json')
-          .then(function (response) {
-            angular.extend(models, { faction: faction }, response.data);
-            successCallback();
-          }, function (response) {
-            console.log(response);
-          });
-      }
-    };
-  }]);
+  });

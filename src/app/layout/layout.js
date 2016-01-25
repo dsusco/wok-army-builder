@@ -6,7 +6,7 @@ angular
 
   .config(['$stateProvider', function ($stateProvider) {
     $stateProvider
-      .state('tabs', {
+      .state('home', {
         url: '',
         views: {
           '': {
@@ -23,17 +23,17 @@ angular
             }],
             templateUrl: 'layout/tabs.tpl.html'
           },
-          'faction@tabs': {
+          'faction@home': {
             controller: ['$scope', 'factions', 'gameSizes', function ($scope, factions, gameSizes) {
               $scope.factions = factions;
               $scope.gameSizes = gameSizes;
             }],
             templateUrl: 'layout/faction.tpl.html'
           },
-          'army@tabs': {
+          'army@home': {
             templateUrl: 'layout/army.tpl.html'
           },
-          'recordSheet@tabs': {
+          'recordSheet@home': {
             templateUrl: 'layout/record-sheet.tpl.html'
           }
         }
@@ -60,5 +60,28 @@ angular
       Specialist: 4,
       Options: 12
     }
+  })
+
+  .filter('factionImageFilter', function () {
+    return function (faction) {
+      if (faction !== undefined) {
+        faction = '/assets/images/' + faction.toLowerCase().replace(/[^0-9a-z]+/g, '-') + '.png';
+      } else {
+        faction = '';
+      }
+
+      return faction;
+    };
+  })
+
+  .filter('optionsFilter', function () {
+    return function (options) {
+      options /= 3;
+
+      return options.toFixed(1)
+        .replace(/\.0$/, '')
+        .replace(/0?\.3$/, '⅓')
+        .replace(/0?\.7$/, '⅔');
+    };
   });
 
