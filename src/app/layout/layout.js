@@ -59,7 +59,8 @@ angular
       Infantry: 24,
       Specialist: 4,
       Options: 12
-    }
+    },
+    Custom: {}
   })
 
   .filter('factionImageFilter', function () {
