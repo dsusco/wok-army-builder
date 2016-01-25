@@ -10,9 +10,10 @@ angular
         url: '',
         views: {
           '': {
-            controller: ['$scope', 'army', function ($scope, army) {
+            controller: ['$scope', 'army', 'gameSizes', function ($scope, army, gameSizes) {
               $scope.active = [true, false, false];
               $scope.army = army;
+              $scope.gameSizes = gameSizes;
 
               $scope.$watchGroup(['army.gameSize', 'army.faction'], function (values) {
                 if (values.every(function (value) { return value !== undefined; })) {
@@ -24,9 +25,8 @@ angular
             templateUrl: 'layout/tabs.tpl.html'
           },
           'faction@home': {
-            controller: ['$scope', 'factions', 'gameSizes', function ($scope, factions, gameSizes) {
+            controller: ['$scope', 'factions', function ($scope, factions) {
               $scope.factions = factions;
-              $scope.gameSizes = gameSizes;
             }],
             templateUrl: 'layout/faction.tpl.html'
           },

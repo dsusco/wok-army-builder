@@ -52,7 +52,7 @@ angular
 
   .directive('wokOptionList', function () {
     return {
-      controller: ['$scope', function ($scope) {
+      controller: ['$scope', 'gameSizes', function ($scope, gameSizes) {
         $scope.options = 0;
 
         $scope.$on('characterChange', function (event) {
@@ -84,7 +84,7 @@ angular
 
           $scope.options = options;
 
-          $scope.$broadcast('checkRemainingRanks', true, $scope.army.gameSize.Options - $scope.options);
+          $scope.$broadcast('checkRemainingRanks', true, gameSizes[$scope.army.gameSize].Options - $scope.options);
         }, true);
       }]
     };
@@ -92,7 +92,7 @@ angular
 
   .directive('wokType', function () {
     return {
-      controller: ['$scope', function ($scope) {
+      controller: ['$scope', 'gameSizes', function ($scope, gameSizes) {
         $scope.ranks = 0;
 
         $scope.$on('characterChange', function (event) {
@@ -110,7 +110,7 @@ angular
             return previous + current * $scope.models[$scope.type][index].rank;
           });
 
-          $scope.$broadcast('checkRemainingRanks', false, $scope.army.gameSize[$scope.type] - $scope.ranks);
+          $scope.$broadcast('checkRemainingRanks', false, gameSizes[$scope.army.gameSize][$scope.type] - $scope.ranks);
         });
       }]
     };

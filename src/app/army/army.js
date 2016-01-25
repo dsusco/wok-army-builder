@@ -1,7 +1,7 @@
 angular
   .module('wokArmyBuilder.army', [])
 
-  .service('army', ['models', function (models) {
+  .service('army', ['gameSizes', 'models', function (gameSizes, models) {
     var army = this;
 
     army.setLists = function () {
@@ -16,7 +16,7 @@ angular
           }
         };
 
-        if (army.gameSize.Options !== undefined) {
+        if (gameSizes[army.gameSize].Options !== undefined) {
           [1, 2].forEach(function (i) {
             army.lists['Options List #' + i] = {
               Infantry: models.Infantry.map(return0),
