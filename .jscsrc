@@ -1,0 +1,6 @@
+{
+  "preset": "crockford",
+  "disallowDanglingUnderscores": false,
+  "requireBlocksOnNewline": false,
+  "validateIndentation": 2
+}
