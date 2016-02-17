@@ -7,13 +7,11 @@
   "unused": true,
   "boss": true,
   "eqnull": true,
+  "browser": true,
+  "jasmine": true,
   "node": true,
   "globals": {
     "angular": false,
-    "beforeEach": false,
-    "describe": false,
-    "expect": false,
-    "inject": false,
-    "it": false
+    "inject": false
   }
 }
