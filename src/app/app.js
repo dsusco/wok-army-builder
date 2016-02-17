@@ -1,52 +1,39 @@
 angular
   .module('wokArmyBuilder', [
+    'ngRoute',
+    'ui.bootstrap',
     'templates-app',
     'templates-common',
-    'wokArmyBuilder.army',
-    'wokArmyBuilder.components',
-    'wokArmyBuilder.layout',
-    'wokArmyBuilder.models'
+    'wokArmyBuilder.builder'
   ])
 
-  .controller('ArmyBuilderController', ['$scope', 'army', 'models', function ($scope, army, models) {
-    $scope.army = army;
-    $scope.models = models;
+  .config(['$routeProvider', function config($routeProvider) {
+    $routeProvider.
+      when('/', {
+        controller: 'BuilderController',
+        controllerAs: 'builder',
+        templateUrl: 'builder/builder.tpl.html'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }])
 
-    $scope.$on('characterChange', function (event, model, value) {
-      var modelIndex, maxValue;
+  .filter('optionsFilter', function optionsFilter() {
+    return function (options) {
+      options /= 3;
 
-      if (event.list === 'Core List') {
-        $scope.$broadcast('toggleCharacter', model, value, true);
-      } else {
-        modelIndex = models.Specialist.indexOf(model);
+      return options.toFixed(1)
+        .replace(/\.0$/, '')
+        .replace(/0?\.3$/, '⅓')
+        .replace(/0?\.7$/, '⅔');
+    };
+  })
 
-        maxValue =
-          Object.getOwnPropertyNames(army.lists).map(function (list) {
-            if (list !== 'Core List' && list !== event.list) {
-              return army.lists[list].Specialist[modelIndex];
-            }
-          }).concat(value)
-            .reduce(function (previous, current) {
-              return current === undefined || previous > current ? previous : current;
-            });
-
-        $scope.$broadcast('toggleCharacter', model, maxValue, false);
+  .filter('spinalCaseFilter', function spinalCaseFilter() {
+    return function (faction) {
+      if (faction !== undefined) {
+        return String(faction).toLowerCase().replace(/[^0-9a-z]+/g, '-');
       }
-    });
-
-    $scope.$watch('army.gameSize', function () {
-      army.setLists();
-
-      try {
-        models.Leader.concat(models.Specialist).forEach(function (model) {
-          if (model.character) {
-            $scope.$broadcast('checkCharacterSelected', model, 0);
-          }
-        });
-      } catch (ignore) {}
-    });
-
-    $scope.$watch('army.faction', function (faction) {
-      models.load(faction, army.setLists);
-    });
-  }]);
+    };
+  });

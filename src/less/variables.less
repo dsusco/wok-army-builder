@@ -24,6 +24,8 @@
 
 @line-height-base:     1.5;
 @line-height-computed: ceil((@font-size-base * @line-height-base)); // ~21px
+@line-height-large:    unit((@line-height-computed / @font-size-large));
+@line-height-small:    unit((@line-height-computed / @font-size-small));
 
 @headings-font-weight: bold;
 

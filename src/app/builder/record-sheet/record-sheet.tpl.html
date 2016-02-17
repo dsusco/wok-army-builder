@@ -1,16 +1,16 @@
-<div class="table-responsive" data-ng-if="army.gameSize !== 'Custom'">
+<div class="table-responsive" data-ng-if="recordSheetTab.army.gameSize !== 'Custom'">
   <table class="table table-bordered">
     <caption>Conquest of Kings Records Sheet</caption>
     <tbody>
       <tr>
         <td><b>Player Name:</b></td>
-        <td><b>Faction:</b> {{army.faction}}</td>
+        <td><b>Faction:</b> {{recordSheetTab.army.faction}}</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<div class="table-responsive" data-ng-if="army.gameSize !== 'Custom'">
+<div class="table-responsive" data-ng-if="recordSheetTab.army.gameSize !== 'Custom'">
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -35,7 +35,7 @@
   </table>
 </div>
 
-<div class="table-responsive" data-ng-repeat="(list, types) in army.lists">
+<div class="table-responsive" data-ng-repeat="(list, types) in recordSheetTab.army.lists">
   <table class="table table-bordered">
     <caption>{{list}}</caption>
     <thead>
@@ -45,11 +45,11 @@
         <th>Quantity</th>
       </tr>
     </thead>
-    <tbody data-ng-repeat="(type, modelCounts) in types" >
-      <tr data-ng-repeat="model in models[type]" data-ng-if="modelCounts[$index]">
+    <tbody data-ng-repeat="(type, numbers) in types" >
+      <tr data-ng-repeat="model in recordSheetTab.models[type]" data-ng-if="numbers[$index]">
         <td>{{model.name}}</td>
         <td>Rank {{model.rank}}{{model.character ? ' Character' : '' }} {{type}}</td>
-        <td class="text-right">{{modelCounts[$index]}}</td>
+        <td class="text-right">{{numbers[$index]}}</td>
       </tr>
     </tbody>
   </table>

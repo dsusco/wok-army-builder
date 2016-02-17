@@ -27,18 +27,16 @@
         </h1>
       </header>
 
-      <main class="row" data-ng-controller="ArmyBuilderController as armyBuilder" data-ui-view>
+      <main class="row" data-ng-view>
         <noscript>
-          <p class="alert alert-info">The Wrath of Kings army builder uses JavaScript, which is not enabled in your browser. Please enable JavaScript to use the army builder.</p>
+          <p class="alert alert-info">This Wrath of Kings army builder requires JavaScript to be enabled in your browser.</p>
         </noscript>
       </main>
 
-      <footer class="hidden-print row">
-        <div class="col-xs-12">
-          <p>This website is completely unofficial and in no way endorsed by CoolMiniOrNot <abbr title="Incorporated">Inc</abbr>.</p>
+      <footer class="hidden-print row text-center">
+        <p>This website is completely unofficial and in no way endorsed by CoolMiniOrNot <abbr title="Incorporated">Inc</abbr>.</p>
 
-          <p>This Wrath of Kings army builder is open source and developed and maintained on <a href="https://github.com/dsusco/wok-army-builder">GitHub</a>.</p>
-        </div>
+        <p>This Wrath of Kings army builder is open source and maintained on <a href="https://github.com/dsusco/wok-army-builder">GitHub</a>.</p>
       </footer>
     </div>
     <% scripts.forEach(function (file) { %>

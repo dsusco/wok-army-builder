@@ -1,0 +1,6 @@
+<div data-uib-accordion>
+  <div data-ng-repeat="(list, types) in armyTab.army.lists" data-uib-accordion-group data-is-open="$first" data-panel-class="panel-primary">
+    <div data-ng-if="list === 'Core List'" data-wok-core-list="list"></div>
+    <div data-ng-if="list !== 'Core List'" data-wok-option-list="list"></div>
+  </div>
+</div>
