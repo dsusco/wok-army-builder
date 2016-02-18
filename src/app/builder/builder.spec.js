@@ -102,7 +102,7 @@ describe('wokArmyBuilder.builder', function () {
       beforeEach(function () {
         service.faction = '';
         service.gameSize = 'Skirmish';
-        service.setLists();
+        service.resetLists();
       });
 
       it('should return false if character is not selected in all option lists', function () {
@@ -128,7 +128,7 @@ describe('wokArmyBuilder.builder', function () {
       it('should calculate the options for an option list', function () {
         service.faction = '';
         service.gameSize = 'Skirmish';
-        service.setLists();
+        service.resetLists();
 
         expect(service.options('Options List #1')).toEqual(0);
         expect(service.options('Options List #2')).toEqual(0);
@@ -148,7 +148,7 @@ describe('wokArmyBuilder.builder', function () {
       it('should calculate the ranks for each type', function () {
         service.faction = '';
         service.gameSize = 'Intro';
-        service.setLists();
+        service.resetLists();
 
         expect(service.ranks('Leader')).toEqual(0);
         expect(service.ranks('Infantry')).toEqual(0);
@@ -165,17 +165,17 @@ describe('wokArmyBuilder.builder', function () {
       });
     });
 
-    describe('setLists method', function () {
+    describe('resetLists method', function () {
       it('should not set the lists if gameSize is undefined', function () {
         service.faction = '';
-        service.setLists();
+        service.resetLists();
 
         expect(service.lists).toBeUndefined();
       });
 
       it('should not set the lists if faction is undefined', function () {
         service.gameSize = 'Intro';
-        service.setLists();
+        service.resetLists();
 
         expect(service.lists).toBeUndefined();
       });
@@ -183,7 +183,7 @@ describe('wokArmyBuilder.builder', function () {
       it('should sets the lists if gameSize and faction are defined', function () {
         service.faction = '';
         service.gameSize = 'Intro';
-        service.setLists();
+        service.resetLists();
 
         expect(service.lists).toBeDefined();
         expect(service.lists['Core List']).toBeDefined();
@@ -198,7 +198,7 @@ describe('wokArmyBuilder.builder', function () {
       it('should set the option lists if gameSize and faction are defined', function () {
         service.faction = '';
         service.gameSize = 'Skirmish';
-        service.setLists();
+        service.resetLists();
 
         expect(service.lists['Options List #1']).toBeDefined();
         expect(service.lists['Options List #1'].Infantry.length).toEqual(1);

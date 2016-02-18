@@ -9,11 +9,11 @@ angular
       gameSizes: gameSizes
     });
 
-    $scope.$watch('factionTab.army.gameSize', Army.setLists);
+    $scope.$watch('factionTab.army.gameSize', Army.resetLists);
 
     $scope.$watch('factionTab.army.faction', function watchArmyFaction(faction) {
       Models.load(faction);
-      Army.setLists();
+      Army.resetLists();
     });
   }])
 

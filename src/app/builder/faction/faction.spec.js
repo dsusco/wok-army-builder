@@ -8,7 +8,7 @@ describe('wokArmyBuilder.builder.faction', function () {
       module('wokArmyBuilder.builder.faction', function ($provide) {
         $provide.service('Army', function () {
           angular.extend(this, {
-            setLists: jasmine.createSpy('setLists').and.callFake(function () {})
+            resetLists: jasmine.createSpy('resetLists').and.callFake(function () {})
           });
         });
 
@@ -56,19 +56,19 @@ describe('wokArmyBuilder.builder.faction', function () {
       });
     });
 
-    it('should call Army.setLists when gameSize is changed', function () {
+    it('should call Army.resetLists when gameSize is changed', function () {
       Army.gameSize = 'Intro';
       $scope.$digest();
 
-      expect(Army.setLists).toHaveBeenCalled();
+      expect(Army.resetLists).toHaveBeenCalled();
     });
 
-    it('should call Army.setLists and Models.load when faction is changed', function () {
+    it('should call Army.resetLists and Models.load when faction is changed', function () {
       Army.faction = 'Goritsi';
       $scope.$digest();
 
       expect(Models.load).toHaveBeenCalled();
-      expect(Army.setLists).toHaveBeenCalled();
+      expect(Army.resetLists).toHaveBeenCalled();
     });
   });
 });

@@ -1,11 +1,12 @@
 angular
   .module('wokArmyBuilder.builder', [
+    'wokArmyBuilder.builder.actions',
     'wokArmyBuilder.builder.faction',
     'wokArmyBuilder.builder.army',
     'wokArmyBuilder.builder.recordSheet'
   ])
 
-  .controller('BuilderController', ['$scope', 'Army', function BuilderController($scope, Army) {
+  .controller('BuilderController', ['$scope', '$location', 'Army', function BuilderController($scope, $location, Army) {
     var builder = this;
 
     angular.extend(builder, {
@@ -16,6 +17,17 @@ angular
       }
     });
 
+    $scope.$on('$locationChangeSuccess', function () {
+      var search = $location.search();
+
+      Army.gameSize = search.gameSize;
+      Army.faction = search.faction;
+
+      setTimeout(function () {
+        Army.lists = angular.fromJson(search.lists);
+      });
+    });
+
     $scope.$watchGroup(['builder.army.gameSize', 'builder.army.faction'], function watchArmy(values) {
       if (values.every(function (value) { return value !== undefined; })) {
         builder.tabs.enableArmy = true;
@@ -24,8 +36,10 @@ angular
     });
   }])
 
-  .service('Army', ['Models', 'gameSizes', function ArmyService(Models, gameSizes) {
-    var army = this;
+  .service('Army', ['$location', 'Models', 'gameSizes', function ArmyService($location, Models, gameSizes) {
+    var
+      army = this,
+      search = $location.search();
 
     function return0() { return 0; }
 
@@ -73,26 +87,35 @@ angular
       }, 0);
     };
 
-    army.setLists = function setLists() {
+    army.resetLists = function resetLists() {
       if (army.gameSize !== undefined && army.faction !== undefined) {
-        army.lists = {
-          'Core List': {
-            Leader: Models.Leader.map(return0),
-            Infantry: Models.Infantry.map(return0),
-            Specialist: Models.Specialist.map(return0)
-          }
-        };
-
-        if (gameSizes[army.gameSize].Options !== undefined) {
-          [1, 2].forEach(function forEachOption(i) {
-            army.lists['Options List #' + i] = {
+        try {
+          army.lists = {
+            'Core List': {
+              Leader: Models.Leader.map(return0),
               Infantry: Models.Infantry.map(return0),
               Specialist: Models.Specialist.map(return0)
-            };
-          });
-        }
+            }
+          };
+
+          if (gameSizes[army.gameSize].Options !== undefined) {
+            [1, 2].forEach(function forEachOption(i) {
+              army.lists['Options List #' + i] = {
+                Infantry: Models.Infantry.map(return0),
+                Specialist: Models.Specialist.map(return0)
+              };
+            });
+          }
+        } catch (ignore) {}
       }
     };
+
+    army.gameSize = search.gameSize;
+    army.faction = search.faction;
+
+    setTimeout(function () {
+      army.lists = angular.fromJson(search.lists);
+    });
   }])
 
   .service('Models', ['factions', function ModelsService(factions) {
