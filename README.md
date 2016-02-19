@@ -1,6 +1,6 @@
 # Wrath of Kings Army Builder
 
-An AngularJS SPA army builder for CoolMiniOrNot's Wrath of Kings.
+An AngularJS SPA army builder for CoolMiniOrNot's Wrath of Kings: http://wok-army-builder.appspot.com
 
 ---
 
