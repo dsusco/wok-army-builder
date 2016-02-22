@@ -17,16 +17,7 @@ angular
       }
     });
 
-    $scope.$on('$locationChangeSuccess', function () {
-      var search = $location.search();
-
-      Army.gameSize = search.gameSize;
-      Army.faction = search.faction;
-
-      setTimeout(function () {
-        Army.lists = angular.fromJson(search.lists);
-      });
-    });
+    $scope.$on('$locationChangeSuccess', Army.set);
 
     $scope.$watchGroup(['builder.army.gameSize', 'builder.army.faction'], function watchArmy(values) {
       if (values.every(function (value) { return value !== undefined; })) {
@@ -34,12 +25,12 @@ angular
         builder.tabs.active[1] = true;
       }
     });
+
+    Army.set();
   }])
 
   .service('Army', ['$location', 'Models', 'gameSizes', function ArmyService($location, Models, gameSizes) {
-    var
-      army = this,
-      search = $location.search();
+    var army = this;
 
     function return0() { return 0; }
 
@@ -110,12 +101,26 @@ angular
       }
     };
 
-    army.gameSize = search.gameSize;
-    army.faction = search.faction;
+    army.set = function set() {
+      var search = $location.search();
 
-    setTimeout(function () {
-      army.lists = angular.fromJson(search.lists);
-    });
+      army.gameSize = search.gameSize;
+      army.faction = search.faction;
+
+      setTimeout(function () {
+        army.lists = angular.fromJson(search.lists);
+      });
+    };
+
+    army.showList = function showList(list) {
+      list = army.lists[list];
+
+      return Object.getOwnPropertyNames(list).some(function (type) {
+        return list[type].some(function (number) {
+          return number > 0;
+        });
+      });
+    };
   }])
 
   .service('Models', ['factions', function ModelsService(factions) {

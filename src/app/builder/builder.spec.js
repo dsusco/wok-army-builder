@@ -208,6 +208,12 @@ describe('wokArmyBuilder.builder', function () {
         expect(service.lists['Options List #2'].Specialist[0]).toEqual(0);
       });
     });
+
+    describe('set method', function () {
+    });
+
+    describe('showList method', function () {
+    });
   });
 
   describe('ModelsService', function () {

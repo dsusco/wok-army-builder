@@ -35,7 +35,7 @@
   </table>
 </div>
 
-<div class="table-responsive" data-ng-repeat="(list, types) in recordSheetTab.army.lists">
+<div class="table-responsive" data-ng-repeat="(list, types) in recordSheetTab.army.lists" data-ng-show="recordSheetTab.army.showList(list)">
   <table class="table table-bordered">
     <caption>{{list}}</caption>
     <thead>
