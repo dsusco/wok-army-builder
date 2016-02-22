@@ -21,7 +21,7 @@ angular
 
   .filter('optionsFilter', function optionsFilter() {
     return function (options) {
-      options /= 3;
+      options = +options / 3;
 
       return options.toFixed(1)
         .replace(/\.0$/, '')

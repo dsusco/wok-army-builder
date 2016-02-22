@@ -8,6 +8,10 @@ describe('wokArmyBuilder', function () {
       filter = _$filter_('optionsFilter');
     }));
 
+    it('should cast argument as a number', function () {
+      expect(filter('3')).toEqual('1');
+    });
+
     it('should return one third of the argument', function () {
       expect(filter(3)).toEqual('1');
     });
