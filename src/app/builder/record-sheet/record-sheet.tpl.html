@@ -38,6 +38,11 @@
 <div class="table-responsive" data-ng-repeat="(list, types) in recordSheetTab.army.lists" data-ng-show="recordSheetTab.army.showList(list)">
   <table class="table table-bordered">
     <caption>{{list}}</caption>
+    <colgroup>
+      <col style="width:33%">
+      <col style="width:34%">
+      <col style="width:33%">
+    </colgroup>
     <thead>
       <tr>
         <th>Model Name</th>
