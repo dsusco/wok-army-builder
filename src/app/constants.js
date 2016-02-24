@@ -260,7 +260,7 @@ angular
         { name: 'Fulung Devourer',
           rank: 2
         },
-        { name: ' The Deathbloom',
+        { name: 'The Deathbloom',
           rank: 2,
           character: true
         },
@@ -294,7 +294,7 @@ angular
           traits: ['Citizen'],
           character: true
         },
-        { name: 'Addanii Brood Mastermind',
+        { name: 'Addanii Brood Masterminds',
           rank: 1,
           traits: ['Addanii']
         },
@@ -328,7 +328,7 @@ angular
         { name: 'C.A.G.E.',
           rank: 2
         },
-        { name: 'Sorik the Unnished',
+        { name: 'Sorik the Unfinished',
           rank: 2,
           character: true
         },
