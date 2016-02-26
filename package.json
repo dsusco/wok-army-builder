@@ -17,18 +17,18 @@
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-jshint": "^0.11.3",
-    "grunt-contrib-less": "^1.1.0",
-    "grunt-contrib-uglify": "^0.11.0",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-uglify": "^0.11.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-html2js": "^0.3.5",
-    "grunt-jscs": "^2.6.0",
+    "grunt-jscs": "^2.7.0",
     "grunt-karma": "^0.12.1",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-shell": "^1.1.2",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
-    "karma-jasmine": "^0.3.6"
+    "karma-jasmine": "^0.3.7"
   }
 }

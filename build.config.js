@@ -1,6 +1,7 @@
 module.exports = {
   build_dir: 'build',
   compile_dir: 'dist',
+  deploy_command: '~/google_appengine/appcfg.py update .',
 
   app_files: {
     grunt: [
@@ -42,7 +43,8 @@ module.exports = {
   vendor_files: {
     js: [
       'bower_components/angular/angular.js',
-      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js'
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-route/angular-route.js'
     ],
 
     css: [
