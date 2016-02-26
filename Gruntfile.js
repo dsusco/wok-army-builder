@@ -334,8 +334,8 @@ module.exports = function (grunt) {
       },
 
       shell: {
-        update: {
-          command: '~/google_appengine/appcfg.py update .'
+        deploy: {
+          command: '<%= deploy_command %>'
         }
       },
 
@@ -402,9 +402,9 @@ module.exports = function (grunt) {
     'delta'
   ]);
 
-  grunt.registerTask('update', [
+  grunt.registerTask('deploy', [
     'compile',
-    'shell:update'
+    'shell:deploy'
   ]);
 
   grunt.renameTask('watch', 'delta');

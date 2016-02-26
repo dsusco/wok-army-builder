@@ -1,6 +1,7 @@
 module.exports = {
   build_dir: 'build',
   compile_dir: 'dist',
+  deploy_command: '~/google_appengine/appcfg.py update .',
 
   app_files: {
     grunt: [
