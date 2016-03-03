@@ -1,0 +1,68 @@
+{ "name": "Nasier",
+  "Leader": [
+    { "name": "Ashmen Hakar",
+      "rank": 1,
+      "traits": ["Ashmen"]
+    },
+    { "name": "Alyana Heska",
+      "rank": 2,
+      "traits": ["Ashmen"],
+      "character": true
+    },
+    { "name": "Pelegarth Howl",
+      "rank": 1,
+      "traits": ["Pelegarth"]
+    },
+    { "name": "Elsis Tagil, The Wail of War",
+      "rank": 2,
+      "traits": ["Pelegarth"],
+      "character": true
+    },
+    { "name": "The Unmasked",
+      "rank": 1,
+      "traits": ["Fel Warrior"]
+    },
+    { "name": "Arkan Thesh",
+      "rank": 2,
+      "traits": ["Fel Warrior"],
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Ashmen Swordsman",
+      "rank": 1,
+      "traits": ["Ashmen"]
+    },
+    { "name": "Pelegarth Bloodmask",
+      "rank": 1,
+      "traits": ["Pelegarth"]
+    },
+    { "name": "Fel Hammer",
+      "rank": 2,
+      "traits": ["Fel Warrior"]
+    }
+  ],
+  "Specialist": [
+    { "name": "Longhorn",
+      "rank": 1
+    },
+    { "name": "Rathor",
+      "rank": 1
+    },
+    { "name": "Greathorn",
+      "rank": 2
+    },
+    { "name": "The Bloodchild",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Shadrus Arikim",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Blind Hakar",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

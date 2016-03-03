@@ -4,6 +4,10 @@ module.exports = {
   deploy_command: '~/google_appengine/appcfg.py update .',
 
   app_files: {
+    factions: [
+      'src/app/factions/**/*.json'
+    ],
+
     grunt: [
       'Gruntfile.js',
       'build.config.js'

@@ -38,6 +38,18 @@ module.exports = function (grunt) {
           dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
         },
 
+        build_factions_value: {
+          options: {
+            banner: 'angular\n  .module("wokArmyBuilder.factions", [])\n  .value("factions", {\n',
+            footer: '});',
+            process: function (src) {
+              return '"' + JSON.parse(src).name + '": ' + src + ',';
+            }
+          },
+          src: '<%= app_files.factions %>',
+          dest: '<%= build_dir %>/src/app/factions.js'
+        },
+
         compile_js: {
           options: {
             banner: '<%= meta.banner %>'
@@ -153,6 +165,13 @@ module.exports = function (grunt) {
           tasks: [
             'copy:build_app_assets',
             'copy:build_vendor_assets'
+          ]
+        },
+
+        factions: {
+          files: '<%= app_files.factions %>',
+          tasks: [
+            'concat:build_factions_value'
           ]
         },
 
@@ -290,6 +309,7 @@ module.exports = function (grunt) {
             '<%= vendor_files.js %>',
             '<%= html2js.app.dest %>',
             '<%= html2js.common.dest %>',
+            '<%= concat.build_factions_value.dest %>',
             '<%= test_files.js %>'
           ]
         }
@@ -377,6 +397,7 @@ module.exports = function (grunt) {
     'jscs',
     'less:build',
     'concat:build_css',
+    'concat:build_factions_value',
     'copy:build_app_assets',
     'copy:build_vendor_assets',
     'copy:build_app_js',

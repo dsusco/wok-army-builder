@@ -1,0 +1,68 @@
+{ "name": "Goritsi",
+  "Leader": [
+    { "name": "Dancing Master",
+      "rank": 1,
+      "traits": ["Zeti"]
+    },
+    { "name": "Hestra Nostrollo",
+      "rank": 2,
+      "traits": ["Zeti"],
+      "character": true
+    },
+    { "name": "Skorza Alpha",
+      "rank": 1,
+      "traits": ["Skorza"]
+    },
+    { "name": "Korrad Ungarash",
+      "rank": 2,
+      "traits": ["Skorza"],
+      "character": true
+    },
+    { "name": "Ravenscar Sergeant",
+      "rank": 1,
+      "traits": ["Ravenscar"]
+    },
+    { "name": "Lord Hob",
+      "rank": 2,
+      "traits": ["Ravenscar"],
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "War Dancer",
+      "rank": 1,
+      "traits": ["Zeti"]
+    },
+    { "name": "Skorza Skirmisher",
+      "rank": 2,
+      "traits": ["Skorza"]
+    },
+    { "name": "Ravenscar Mercenary",
+      "rank": 1,
+      "traits": ["Ravenscar"]
+    }
+  ],
+  "Specialist": [
+    { "name": "Shield Breaker",
+      "rank": 1
+    },
+    { "name": "Scourge Hound",
+      "rank": 1
+    },
+    { "name": "Blood Engine",
+      "rank": 2
+    },
+    { "name": "Gregorio don Sissora",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Dragonslayer",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Duke Anton don Genoria",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}
