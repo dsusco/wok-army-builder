@@ -3,7 +3,7 @@ module.exports = function (karma) {
     autoWatch: false,
     basePath: '../',
     browsers: [
-      'Chrome'
+      'PhantomJS'
     ],
     files: [
       <% scripts.forEach(function (file) { %>'<%= file %>',
@@ -18,7 +18,7 @@ module.exports = function (karma) {
     ],
     plugins: [
       'karma-jasmine',
-      'karma-chrome-launcher'
+      'karma-phantomjs-launcher'
     ],
     port: 9018,
     reporters: 'dots',
