@@ -1,4 +1,4 @@
-# Wrath of Kings Army Builder
+# Wrath of Kings Army Builder [![Build Status](https://travis-ci.org/dsusco/wok-army-builder.svg?branch=master)](https://travis-ci.org/dsusco/wok-army-builder)
 
 An AngularJS SPA army builder for CoolMiniOrNot's Wrath of Kings: http://wok-army-builder.appspot.com
 
