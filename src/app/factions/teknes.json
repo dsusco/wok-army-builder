@@ -26,6 +26,10 @@
       "rank": 2,
       "traits": ["Addanii"],
       "character": true
+    },
+    { "name": "Warsmith Captain",
+      "rank": 1,
+      "traits": ["Citizen"]
     }
   ],
   "Infantry": [
@@ -40,6 +44,10 @@
     { "name": "Addanii Brood Warrior",
       "rank": 2,
       "traits": ["Addanii"]
+    },
+    { "name": "Warsmith",
+      "rank": 2,
+      "traits": ["Citizen"]
     }
   ],
   "Specialist": [

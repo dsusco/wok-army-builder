@@ -13,6 +13,10 @@
       "rank": 1,
       "traits": ["Pelegarth"]
     },
+    { "name": "Brute Warden",
+      "rank": 1,
+      "traits": ["Pelegarth"]
+    },
     { "name": "Elsis Tagil, The Wail of War",
       "rank": 2,
       "traits": ["Pelegarth"],
@@ -37,6 +41,10 @@
       "rank": 1,
       "traits": ["Pelegarth"]
     },
+    { "name": "Pelegarth Brute",
+      "rank": 2,
+      "traits": ["Pelegarth"]
+    },
     { "name": "Fel Hammer",
       "rank": 2,
       "traits": ["Fel Warrior"]
@@ -47,6 +55,9 @@
       "rank": 1
     },
     { "name": "Rathor",
+      "rank": 1
+    },
+    { "name": "Arkazan Greatwing",
       "rank": 1
     },
     { "name": "Greathorn",

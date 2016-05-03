@@ -18,6 +18,11 @@
       "traits": ["Skorza"],
       "character": true
     },
+    { "name": "Gorbal the Rampager",
+      "rank": 2,
+      "traits": ["Skorza"],
+      "character": true
+    },
     { "name": "Ravenscar Sergeant",
       "rank": 1,
       "traits": ["Ravenscar"]
@@ -48,6 +53,10 @@
     },
     { "name": "Scourge Hound",
       "rank": 1
+    },
+    { "name": "Pack Master Kozakar",
+      "rank": 1,
+      "character": true
     },
     { "name": "Blood Engine",
       "rank": 2
