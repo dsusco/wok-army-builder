@@ -13,6 +13,10 @@
       "rank": 1,
       "traits": ["Citizen"]
     },
+    { "name": "Warsmith Captain",
+      "rank": 1,
+      "traits": ["Citizen"]
+    },
     { "name": "Defender Raeth Sevisk",
       "rank": 2,
       "traits": ["Citizen"],
@@ -26,10 +30,6 @@
       "rank": 2,
       "traits": ["Addanii"],
       "character": true
-    },
-    { "name": "Warsmith Captain",
-      "rank": 1,
-      "traits": ["Citizen"]
     }
   ],
   "Infantry": [
@@ -41,13 +41,13 @@
       "rank": 1,
       "traits": ["Citizen"]
     },
-    { "name": "Addanii Brood Warrior",
-      "rank": 2,
-      "traits": ["Addanii"]
-    },
     { "name": "Warsmith",
       "rank": 2,
       "traits": ["Citizen"]
+    },
+    { "name": "Addanii Brood Warrior",
+      "rank": 2,
+      "traits": ["Addanii"]
     }
   ],
   "Specialist": [
@@ -55,6 +55,9 @@
       "rank": 1
     },
     { "name": "Galvanic Defender",
+      "rank": 1
+    },
+    { "name": "War Stomper",
       "rank": 1
     },
     { "name": "C.A.G.E.",
