@@ -57,5 +57,11 @@ angular
       Specialist: 4,
       Options: 12
     },
+    'Modified Skirmish': {
+      Leader: 4,
+      Infantry: 18,
+      Specialist: 2,
+      Options: 18
+    },
     Custom: {}
   });
