@@ -40,7 +40,7 @@ angular
   })
 
   .value('gameSizes', {
-    Intro: {
+    Patrol: {
       Leader: 2,
       Infantry: 12,
       Specialist: 2

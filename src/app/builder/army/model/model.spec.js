@@ -91,7 +91,7 @@ describe('wokArmyBuilder.builder.army.model', function () {
       });
 
       it('should set selectedCharacter and emit characterSelected event if a character', function () {
-        $scope.model = factions.Goritsi.Leader[1];
+        $scope.model = factions.Goritsi.Leader[2];
 
         expect($scope.selectedCharacter).toBeUndefined();
 

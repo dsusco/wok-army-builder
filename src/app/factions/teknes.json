@@ -4,7 +4,16 @@
       "rank": 1,
       "traits": ["Union Member"]
     },
+    { "name": "Flight Captain",
+      "rank": 1,
+      "traits": ["Union Member"]
+    },
     { "name": "The Ironward",
+      "rank": 2,
+      "traits": ["Union Member"],
+      "character": true
+    },
+    { "name": "Yevrozov, The Bloody Spear",
       "rank": 2,
       "traits": ["Union Member"],
       "character": true
@@ -37,6 +46,10 @@
       "rank": 1,
       "traits": ["Union Member"]
     },
+    { "name": "Union Bombardier",
+      "rank": 2,
+      "traits": ["Union Member"]
+    },
     { "name": "Defender Lineman",
       "rank": 1,
       "traits": ["Citizen"]
@@ -60,7 +73,17 @@
     { "name": "War Stomper",
       "rank": 1
     },
+    { "name": "Union Butcher",
+      "rank": 1
+    },
+    { "name": "Molotok, The Iron Juggernaut",
+      "rank": 1,
+      "character": true
+    },
     { "name": "C.A.G.E.",
+      "rank": 2
+    },
+    { "name": "Hateforged Titan",
       "rank": 2
     },
     { "name": "Sorik the Unfinished",

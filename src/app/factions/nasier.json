@@ -4,6 +4,10 @@
       "rank": 1,
       "traits": ["Ashmen"]
     },
+    { "name": "Firehawk Raid Leader",
+      "rank": 1,
+      "traits": ["Ashmen"]
+    },
     { "name": "Alyana Heska",
       "rank": 2,
       "traits": ["Ashmen"],
@@ -37,6 +41,10 @@
       "rank": 1,
       "traits": ["Ashmen"]
     },
+    { "name": "Ashmen Firehawk",
+      "rank": 1,
+      "traits": ["Ashmen"]
+    },
     { "name": "Pelegarth Bloodmask",
       "rank": 1,
       "traits": ["Pelegarth"]
@@ -60,6 +68,16 @@
     { "name": "Arkazan Greatwing",
       "rank": 1
     },
+    { "name": "Sarvoth Shadow-Veil",
+      "rank": 1
+    },
+    { "name": "Izari Warhounds",
+      "rank": 1
+    },
+    { "name": "Vallenya Rhabar, The Shadow’s Step",
+      "rank": 1,
+      "character": true
+    },
     { "name": "Greathorn",
       "rank": 2
     },
@@ -72,6 +90,10 @@
       "character": true
     },
     { "name": "The Blind Hakar",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Kor Kallum, Greatwing Prototype",
       "rank": 2,
       "character": true
     }

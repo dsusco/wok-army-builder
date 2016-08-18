@@ -4,6 +4,10 @@
       "rank": 1,
       "traits": ["Deepmen"]
     },
+    { "name": "Mussellar Sergeant",
+      "rank": 1,
+      "traits": ["Deepmen"]
+    },
     { "name": "Torvosh the Bannerman",
       "rank": 2,
       "traits": ["Deepmen"],
@@ -22,6 +26,10 @@
       "rank": 1,
       "traits": ["Carcharian"]
     },
+    { "name": "Pit Boss",
+      "rank": 1,
+      "traits": ["Carcharian"]
+    },
     { "name": "Gar, the Gladiator",
       "rank": 2,
       "traits": ["Carcharian"],
@@ -33,11 +41,19 @@
       "rank": 1,
       "traits": ["Deepmen"]
     },
+    { "name": "Deepman Nephrodus",
+      "rank": 2,
+      "traits": ["Deepmen"]
+    },
     { "name": "Sevridan Gutter",
       "rank": 2,
       "traits": ["Sevridan"]
     },
     { "name": "Carcharian Frenzy",
+      "rank": 2,
+      "traits": ["Carcharian"]
+    },
+    { "name": "Pit Fighter",
       "rank": 2,
       "traits": ["Carcharian"]
     }
@@ -49,7 +65,24 @@
     { "name": "Calith Reaver",
       "rank": 1
     },
+    { "name": "Shell Cracker",
+      "rank": 1
+    },
+    { "name": "Neritic Horror",
+      "rank": 1
+    },
+    { "name": "Voth Barbarian of the Deep",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "Sylla, Sea-Wytch of Mallegar Depths",
+      "rank": 1,
+      "character": true
+    },
     { "name": "Oresund Cavalier",
+      "rank": 2
+    },
+    { "name": "Immanid Kraken",
       "rank": 2
     },
     { "name": "The Oracle of Ulloth",

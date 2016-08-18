@@ -4,6 +4,10 @@
       "rank": 1,
       "traits": ["Dragon Guard"]
     },
+    { "name": "Lancer Nexus",
+      "rank": 1,
+      "traits": ["Dragon Guard"]
+    },
     { "name": "The Winterhawk",
       "rank": 2,
       "traits": ["Dragon Guard"],
@@ -26,11 +30,24 @@
       "rank": 2,
       "traits": ["Lotus Warrior"],
       "character": true
+    },
+    { "name": "Avatar of the Monkey",
+      "rank": 1,
+      "traits": ["Celestial"]
+    },
+    { "name": "General Hu-Ren, The Fear Unseen",
+      "rank": 2,
+      "traits": ["Celestial"],
+      "character": true
     }
   ],
   "Infantry": [
     { "name": "Dragon Legionnaire",
       "rank": 1,
+      "traits": ["Dragon Guard"]
+    },
+    { "name": "Dragon Lancer",
+      "rank": 2,
       "traits": ["Dragon Guard"]
     },
     { "name": "The Wrath",
@@ -40,6 +57,18 @@
     { "name": "Iron Lotus Warrior",
       "rank": 1,
       "traits": ["Lotus Warrior"]
+    },
+    { "name": "Avatar of the Serpent",
+      "rank": 2,
+      "traits": ["Celestial"]
+    },
+    { "name": "Avatar of the Bear",
+      "rank": 2,
+      "traits": ["Celestial"]
+    },
+    { "name": "Avatar of the Elephant",
+      "rank": 2,
+      "traits": ["Celestial"]
     }
   ],
   "Specialist": [
@@ -48,6 +77,19 @@
     },
     { "name": "Hammer of Heaven",
       "rank": 1
+    },
+    { "name": "Celestial Gatekeeper",
+      "rank": 1
+    },
+    { "name": "Celestial Trickster",
+      "rank": 1
+    },
+    { "name": "Paragon of Wrath",
+      "rank": 1
+    },
+    { "name": "Za’Ken, The Silent Storm",
+      "rank": 1,
+      "character": true
     },
     { "name": "Fulung Devourer",
       "rank": 2

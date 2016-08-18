@@ -44,7 +44,7 @@ describe('wokArmyBuilder.builder', function () {
       });
 
       it('should not set tabs properties if faction is undefined', function () {
-        Army.faction = 'Intro';
+        Army.faction = 'Patrol';
         $scope.$digest();
 
         expect(controller.tabs.enableArmy).toBe(false);
@@ -52,7 +52,7 @@ describe('wokArmyBuilder.builder', function () {
       });
 
       it('should set tabs properties if both are defined', function () {
-        Army.gameSize = 'Intro';
+        Army.gameSize = 'Patrol';
         Army.faction = 'Goritsi';
         $scope.$digest();
 
@@ -147,7 +147,7 @@ describe('wokArmyBuilder.builder', function () {
     describe('ranks method', function () {
       it('should calculate the ranks for each type', function () {
         service.faction = '';
-        service.gameSize = 'Intro';
+        service.gameSize = 'Patrol';
         service.resetLists();
 
         expect(service.ranks('Leader')).toEqual(0);
@@ -174,7 +174,7 @@ describe('wokArmyBuilder.builder', function () {
       });
 
       it('should not set the lists if faction is undefined', function () {
-        service.gameSize = 'Intro';
+        service.gameSize = 'Patrol';
         service.resetLists();
 
         expect(service.lists).toBeUndefined();
@@ -182,7 +182,7 @@ describe('wokArmyBuilder.builder', function () {
 
       it('should sets the lists if gameSize and faction are defined', function () {
         service.faction = '';
-        service.gameSize = 'Intro';
+        service.gameSize = 'Patrol';
         service.resetLists();
 
         expect(service.lists).toBeDefined();

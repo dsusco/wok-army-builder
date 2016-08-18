@@ -4,12 +4,20 @@
       "rank": 1,
       "traits": ["Zeti"]
     },
+    { "name": "Night Mistress",
+      "rank": 1,
+      "traits": ["Zeti"]
+    },
     { "name": "Hestra Nostrollo",
       "rank": 2,
       "traits": ["Zeti"],
       "character": true
     },
     { "name": "Skorza Alpha",
+      "rank": 1,
+      "traits": ["Skorza"]
+    },
+    { "name": "Gotha Lord",
       "rank": 1,
       "traits": ["Skorza"]
     },
@@ -38,7 +46,15 @@
       "rank": 1,
       "traits": ["Zeti"]
     },
+    { "name": "Domani Mesmer",
+      "rank": 2,
+      "traits": ["Zeti"]
+    },
     { "name": "Skorza Skirmisher",
+      "rank": 2,
+      "traits": ["Skorza"]
+    },
+    { "name": "Gotha Knight",
       "rank": 2,
       "traits": ["Skorza"]
     },
@@ -54,11 +70,20 @@
     { "name": "Scourge Hound",
       "rank": 1
     },
+    { "name": "Whitemane Duelist",
+      "rank": 1
+    },
+    { "name": "Moonclave Executioner",
+      "rank": 1
+    },
     { "name": "Pack Master Kozakar",
       "rank": 1,
       "character": true
     },
     { "name": "Blood Engine",
+      "rank": 2
+    },
+    { "name": "Ravener Alpha",
       "rank": 2
     },
     { "name": "Gregorio don Sissora",

@@ -9,7 +9,7 @@ describe('wokArmyBuilder.builder.army.coreList', function () {
         $provide.service('Army', function () {
           angular.extend(this, {
             ranks: jasmine.createSpy('ranks').and.callFake(function () { return 0; }),
-            gameSize: 'Intro',
+            gameSize: 'Patrol',
             lists: {
               'Core List': {
                 Leader: [0],

@@ -57,7 +57,7 @@ describe('wokArmyBuilder.builder.faction', function () {
     });
 
     it('should call Army.resetLists when gameSize is changed', function () {
-      Army.gameSize = 'Intro';
+      Army.gameSize = 'Patrol';
       $scope.$digest();
 
       expect(Army.resetLists).toHaveBeenCalled();
