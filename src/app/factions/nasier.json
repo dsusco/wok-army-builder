@@ -96,6 +96,14 @@
     { "name": "Kor Kallum, Greatwing Prototype",
       "rank": 2,
       "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
     }
   ]
 }

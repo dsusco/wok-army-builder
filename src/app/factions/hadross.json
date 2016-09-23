@@ -96,6 +96,14 @@
     { "name": "Ilva, the Syren of Kaldeth Strait",
       "rank": 2,
       "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
     }
   ]
 }
