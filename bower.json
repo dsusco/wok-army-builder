@@ -1,6 +1,6 @@
 {
   "name": "ngbp",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "devDependencies": {
     "angular": "~1.5.9",
     "angular-bootstrap": "~2.2.0",
