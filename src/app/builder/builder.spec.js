@@ -27,10 +27,8 @@ describe('wokArmyBuilder.builder', function () {
         expect(controller.tabs.enableArmy).toBe(false);
       });
 
-      it('active should be initialized to [true, false, false]', function () {
-        expect(controller.tabs.active[0]).toBe(true);
-        expect(controller.tabs.active[1]).toBe(false);
-        expect(controller.tabs.active[2]).toBe(false);
+      it('active should be initialized to 0', function () {
+        expect(controller.tabs.active).toBe(0);
       });
     });
 
@@ -40,7 +38,7 @@ describe('wokArmyBuilder.builder', function () {
         $scope.$digest();
 
         expect(controller.tabs.enableArmy).toBe(false);
-        expect(controller.tabs.active[1]).toBe(false);
+        expect(controller.tabs.active).toBe(0);
       });
 
       it('should not set tabs properties if faction is undefined', function () {
@@ -48,7 +46,7 @@ describe('wokArmyBuilder.builder', function () {
         $scope.$digest();
 
         expect(controller.tabs.enableArmy).toBe(false);
-        expect(controller.tabs.active[1]).toBe(false);
+        expect(controller.tabs.active).toBe(0);
       });
 
       it('should set tabs properties if both are defined', function () {
@@ -57,7 +55,7 @@ describe('wokArmyBuilder.builder', function () {
         $scope.$digest();
 
         expect(controller.tabs.enableArmy).toBe(true);
-        expect(controller.tabs.active[1]).toBe(true);
+        expect(controller.tabs.active).toBe(1);
       });
     });
   });

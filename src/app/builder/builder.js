@@ -12,7 +12,7 @@ angular
     angular.extend(builder, {
       army: Army,
       tabs: {
-        active: [true, false, false],
+        active: 0,
         enableArmy: false
       }
     });
@@ -22,7 +22,7 @@ angular
     $scope.$watchGroup(['builder.army.gameSize', 'builder.army.faction'], function watchArmy(values) {
       if (values.every(function (value) { return value !== undefined; })) {
         builder.tabs.enableArmy = true;
-        builder.tabs.active[1] = true;
+        builder.tabs.active = 1;
       }
     });
 
