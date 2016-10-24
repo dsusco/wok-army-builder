@@ -4,7 +4,7 @@
 </div>
 
 <div data-uib-accordion>
-  <div data-ng-repeat="(type, numbers) in army.lists[list]" data-uib-accordion-group data-heading="{{type}}" data-is-open="$first" data-panel-class="panel-primary">
+  <div class="panel-primary" data-ng-repeat="(type, numbers) in army.lists[list]" data-uib-accordion-group data-heading="{{type}}" data-is-open="$first">
 
     <div class="model" data-ng-repeat="model in models[type]" data-wok-model="model" data-number="numbers[$index]"></div>
   </div>

@@ -1,7 +1,7 @@
 <div data-uib-accordion-heading>{{list}}</div>
 
 <div data-uib-accordion>
-  <div data-ng-repeat="(type, numbers) in army.lists[list]" data-uib-accordion-group data-is-open="$first" data-panel-class="panel-primary">
+  <div class="panel-primary" data-ng-repeat="(type, numbers) in army.lists[list]" data-uib-accordion-group data-is-open="$first">
     <div data-uib-accordion-heading>
       {{type}}
       <span class="pull-right">({{ranks[type]}}<span data-ng-if="maxRanks(type) !== undefined">/{{maxRanks(type)}}</span>)</span>
