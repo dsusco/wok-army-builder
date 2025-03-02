@@ -14,5 +14,8 @@
   "scripts": {
     "build": "node"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "eslint": "^9.21.0"
+  }
 }

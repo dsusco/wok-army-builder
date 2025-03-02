@@ -1,6 +1,6 @@
-# Warmaster Army Selector
+# Wrath of Kings Army Builder
 
-[![Deploy to wm-selector.github.io](https://github.com/dsusco/wm-selector/actions/workflows/deploy_to_github_pages.yml/badge.svg)](https://github.com/dsusco/wm-selector/actions/workflows/deploy_to_github_pages.yml)
+[![Deploy to wok-army-builder.github.io](https://github.com/dsusco/wok-army-builder/actions/workflows/deploy_to_github_pages.yml/badge.svg)](https://github.com/dsusco/wok-army-builder/actions/workflows/deploy_to_github_pages.yml)
 
 ## The TL;DR Start
 
