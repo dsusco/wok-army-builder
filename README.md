@@ -1,21 +1,13 @@
-# Wrath of Kings Army Builder [![Build Status](https://travis-ci.org/dsusco/wok-army-builder.svg?branch=master)](https://travis-ci.org/dsusco/wok-army-builder)
+# Warmaster Army Selector
 
-An AngularJS SPA army builder for CoolMiniOrNot's Wrath of Kings: http://wok-army-builder.appspot.com
-
----
+[![Deploy to wm-selector.github.io](https://github.com/dsusco/wm-selector/actions/workflows/deploy_to_github_pages.yml/badge.svg)](https://github.com/dsusco/wm-selector/actions/workflows/deploy_to_github_pages.yml)
 
 ## The TL;DR Start
 
-Assuming [Node.js](https://nodejs.org/) is installed and the [grunt-cli](https://github.com/gruntjs/grunt-cli) and [bower](https://github.com/bower/bower) packages are installed globally:
+## Contributing
 
-    $ git clone https://github.com/dsusco/wok-army-builder.git
-    $ cd wok-army-builder
-    $ npm install
-    $ bower install
-    $ grunt watch
-
-That should open [http://localhost:3000/](http://localhost:3000/) in a browser.
-
-## Props
-
-This began life as an [ngBoilerplate](https://github.com/ngbp/ngbp) project, thanks ngbp team.
+1. Fork `https://github.com/dsusco/wok-army-builder`
+2. Create a branch (`git checkout -b new-feature`)
+3. Commit the changes (`git commit -am 'Added a new feature'`)
+4. Push the branch (`git push origin new-feature`)
+5. Create a pull request

@@ -1,0 +1,30 @@
+name: Deploy to wok-army-builder.github.io
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with:
+          repository: wok-army-builder/wok-army-builder.github.io
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: wok-army-builder.github.io
+      - uses: actions/setup-node@v3
+      - name: Build and Deploy
+        run: |
+          npm ci
+          npm run build
+          rm -Rf wok-army-builder.github.io/*
+          cp -Rf dist/* wok-army-builder.github.io/
+          cd wok-army-builder.github.io/
+          git config user.email 'dsusco@gmail.com'
+          git config user.name 'David Susco'
+          git checkout README.md
+          git add .
+          git commit -m '${{ github.repository }} ${{ github.sha }}'
+          git push -f origin main

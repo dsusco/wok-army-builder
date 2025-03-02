@@ -1,9 +1,0 @@
-<span class="name" data-uib-tooltip="{{model.name}} (Rank {{model.rank}}{{model.character ? ' Character' : '' }})" data-tooltip-placement="top-left" data-tooltip-trigger="'outsideClick'">
-  {{model.name}}
-  (Rank {{model.rank}}{{model.character ? ' Character' : '' }})
-</span>
-<span class="actions">
-  <input class="btn btn-primary" type="button" value="-" data-ng-click="add(-1)" data-ng-disabled="number < 1">
-  <span class="number">{{number}}</span>
-  <input class="btn btn-primary" type="button" value="+" data-ng-click="add(1)" data-ng-disabled="notEnoughRanks || selectedCharacter">
-</span>
