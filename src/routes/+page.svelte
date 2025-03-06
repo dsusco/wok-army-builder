@@ -27,8 +27,8 @@
 <Tabs.Root bind:value={getTabsValue, setTabsValue}>
   <Tabs.List>
     <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
-    <Tabs.Trigger value="army">Army</Tabs.Trigger>
-    <Tabs.Trigger value="record_sheet">Record Sheet</Tabs.Trigger>
+    <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="army">Army</Tabs.Trigger>
+    <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="record_sheet">Record Sheet</Tabs.Trigger>
   </Tabs.List>
 
   <Tabs.Content value="faction">
