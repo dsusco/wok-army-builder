@@ -4,6 +4,7 @@ import gameSizes from '$lib/json/game_sizes.json';
 
 class Army {
   MODEL_TYPES = ['Leader', 'Infantry', 'Specialist'];
+  OPTION_TYPES = ['Infantry', 'Specialist'];
 
 	#factionPath = $state('');
 
