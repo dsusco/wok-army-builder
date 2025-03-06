@@ -1,5 +1,6 @@
 <script>
   import army from '$lib/components/army.svelte.js';
+  import Model from '$lib/components/model.svelte';
 
   let
     { type,
@@ -7,7 +8,7 @@
 </script>
 
 {#each Object.values(army.models).filter((model) => model.type === type) as model}
-  {model.name} {optionList}
+  <Model {...model} {optionList} />
 {/each}
 
 <style lang="scss">
