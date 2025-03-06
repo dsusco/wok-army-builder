@@ -5,6 +5,10 @@
   import RecordSheetTab from '$lib/components/record_sheet_tab.svelte';
 </script>
 
+<svelte:head>
+	<title>Wrath of Kings Army Builder</title>
+</svelte:head>
+
 <Tabs.Root value="faction">
   <Tabs.List>
     <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
