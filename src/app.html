@@ -1,12 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-	</body>
+  <head>
+    <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    %sveltekit.head%
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <header>
+      <img alt="Wrath of Kings Army Builder" src="images/wok-header.png">
+    </header>
+
+    <main style="display: contents">
+      %sveltekit.body%
+
+      <noscript>
+        <p>Please enable JavaScript to use this Wrath of Kings army builder.</p>
+      </noscript>
+    </main>
+
+    <footer>
+      <p>This website is completely unofficial and in no way endorsed by CoolMiniOrNot <abbr title="Incorporated">Inc</abbr>.</p>
+
+      <p>This Wrath of Kings army builder is open source and maintained on <a href="https://github.com/dsusco/wok-army-builder">GitHub</a>.</p>
+    </footer>
+  </body>
 </html>
