@@ -3,13 +3,28 @@
   import FactionTab from '$lib/components/faction_tab.svelte';
   import ArmyTab from '$lib/components/army_tab.svelte';
   import RecordSheetTab from '$lib/components/record_sheet_tab.svelte';
+  import army from '$lib/components/army.svelte.js';
+
+  let tabsValue = $state('faction');
+
+  function getTabsValue () {
+    return tabsValue;
+  }
+
+  function setTabsValue (newTabsValue) {
+    tabsValue = newTabsValue;
+  }
+
+  $effect(() => {
+    if (army.gameSizeLabel && army.factionPath) setTabsValue('army');
+  })
 </script>
 
 <svelte:head>
 	<title>Wrath of Kings Army Builder</title>
 </svelte:head>
 
-<Tabs.Root value="faction">
+<Tabs.Root bind:value={getTabsValue, setTabsValue}>
   <Tabs.List>
     <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
     <Tabs.Trigger value="army">Army</Tabs.Trigger>
