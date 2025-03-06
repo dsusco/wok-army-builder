@@ -1,5 +1,6 @@
 <script>
   import army from '$lib/components/army.svelte.js';
+  import TypeGrouping from '$lib/components/type_grouping.svelte';
 
   let
     { index } = $props();
@@ -9,7 +10,7 @@
   <div class="title">Option List #{index + 1} (/{army.gameSize.Options / 3})</div>
 
   {#each Object.entries(army.gameSize).filter(([type]) => army.OPTION_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-    {type} {index}
+    <TypeGrouping {type} optionList={index} />
   {/each}
 </div>
 
