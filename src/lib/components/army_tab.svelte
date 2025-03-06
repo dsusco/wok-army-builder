@@ -6,21 +6,9 @@
 </script>
 
 <Accordion.Root type="single" value="core_list">
-  <Accordion.Item value="core_list">
-    <Accordion.Trigger>Core List</Accordion.Trigger>
-
-    <Accordion.Content>
-      <CoreList />
-    </Accordion.Content>
-  </Accordion.Item>
+  <CoreList />
 
   {#each { length: army.gameSize['Option Lists'] }, index}
-    <Accordion.Item value={`option_list_${index}`}>
-      <Accordion.Trigger>Option List #{index + 1} (/{army.gameSize.Options / 3})</Accordion.Trigger>
-
-      <Accordion.Content>
-        <OptionList {index} />
-      </Accordion.Content>
-    </Accordion.Item>
+    <OptionList {index} />
   {/each}
 </Accordion.Root>

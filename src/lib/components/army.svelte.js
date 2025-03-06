@@ -29,6 +29,29 @@ class Army {
           return models;
         }, {}));
 
+  #rankSums = $derived.by(() => {
+    let rankSums = Object.fromEntries(this.MODEL_TYPES.map(key => [key, 0]))
+    rankSums.optionLists = new Array(this.#gameSize['Option Lists']).fill(0);
+
+    Object.values(this.#models).forEach((model) => {
+      let ranks = model.rank;
+
+      if (this.MODEL_TYPES.indexOf(model.type) >= 0) {
+        rankSums[model.type] += ranks * model.counts.coreList;
+      }
+
+      if (this.OPTION_TYPES.indexOf(model.type) >= 0) {
+        if (model.type === 'Specialist') ranks *= 3;
+
+        for (let i = 0; i < rankSums.optionLists.length; i++) {
+          rankSums.optionLists[i] += ranks * model.counts.optionLists[i];
+        }
+      }
+    });
+
+    return rankSums;
+  });
+
   constructor (factionPath = '', gameSizeLabel = '') {
     this.factionPath = factionPath;
     this.gameSizeLabel = gameSizeLabel;
@@ -48,6 +71,10 @@ class Army {
 
   get models () {
     return this.#models;
+  }
+
+  get rankSums () {
+    return this.#rankSums;
   }
 
   set factionPath (factionPath) {

@@ -4,20 +4,25 @@
   import army from '$lib/components/army.svelte.js';
 
   let
-    { index } = $props();
+    { index } = $props(),
+    rankSums = $derived(`${Math.trunc(army.rankSums.optionLists[index] / 3)}~${army.rankSums.optionLists[index] % 3}`
+      .replace('~0', '')
+      .replace('~1', '⅓')
+      .replace('~2', '⅔')
+      .replace(/^0(.)/, "$1"));
 </script>
 
-<Accordion.Root type="single" value={`option_list_${index}_type_grouping_${army.OPTION_TYPES[0]}`}>
-  {#each Object.entries(army.gameSize).filter(([type]) => army.OPTION_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-    <Accordion.Item value={`option_list_${index}_type_grouping_${type}`}>
-      <Accordion.Trigger>{type}</Accordion.Trigger>
+<Accordion.Item value={`option_list_${index}`}>
+  <Accordion.Trigger>Option List #{index + 1} ({rankSums}/{army.gameSize.Options / 3})</Accordion.Trigger>
 
-      <Accordion.Content>
-        <TypeGrouping {type} optionList={index} />
-      </Accordion.Content>
-    </Accordion.Item>
-  {/each}
-</Accordion.Root>
+  <Accordion.Content>
+    <Accordion.Root type="single" value={`option_list_${index}_type_grouping_${army.OPTION_TYPES[0]}`}>
+      {#each Object.entries(army.gameSize).filter(([type]) => army.OPTION_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
+        <TypeGrouping {type} ranksRemaining={army.gameSize.Options - army.rankSums.optionLists[index]} optionList={index} accordionItemValue={`option_list_${index}_type_grouping_${type}`} />
+      {/each}
+    </Accordion.Root>
+  </Accordion.Content>
+</Accordion.Item>
 
 <style lang="scss">
 </style>

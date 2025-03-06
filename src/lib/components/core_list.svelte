@@ -4,17 +4,17 @@
   import army from '$lib/components/army.svelte.js';
 </script>
 
-<Accordion.Root type="single" value={`type_grouping_${army.MODEL_TYPES[0]}`}>
-  {#each Object.entries(army.gameSize).filter(([type]) => army.MODEL_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-    <Accordion.Item value={`type_grouping_${type}`}>
-      <Accordion.Trigger>{type} (/{totalRanks})</Accordion.Trigger>
+<Accordion.Item value="core_list">
+  <Accordion.Trigger>Core List</Accordion.Trigger>
 
-      <Accordion.Content>
-        <TypeGrouping {type} />
-      </Accordion.Content>
-    </Accordion.Item>
-  {/each}
-</Accordion.Root>
+  <Accordion.Content>
+    <Accordion.Root type="single" value={`type_grouping_${army.MODEL_TYPES[0]}`}>
+      {#each Object.entries(army.gameSize).filter(([type]) => army.MODEL_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
+        <TypeGrouping {type} {totalRanks} accordionItemValue={`type_grouping_${type}`} />
+      {/each}
+    </Accordion.Root>
+  </Accordion.Content>
+</Accordion.Item>
 
 <style lang="scss">
 </style>
