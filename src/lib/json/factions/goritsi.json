@@ -1,0 +1,96 @@
+{ "name": "Goritsi",
+  "Leader": [
+    { "name": "Dancing Master",
+      "rank": 1
+    },
+    { "name": "Night Mistress",
+      "rank": 1
+    },
+    { "name": "Hestra Nostrollo",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Skorza Alpha",
+      "rank": 1
+    },
+    { "name": "Gotha Lord",
+      "rank": 1
+    },
+    { "name": "Korrad Ungarash",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Gorbal the Rampager",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ravenscar Sergeant",
+      "rank": 1
+    },
+    { "name": "Lord Hob",
+      "rank": 2,
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "War Dancer",
+      "rank": 1
+    },
+    { "name": "Domani Mesmer",
+      "rank": 2
+    },
+    { "name": "Skorza Skirmisher",
+      "rank": 2
+    },
+    { "name": "Gotha Knight",
+      "rank": 2
+    },
+    { "name": "Ravenscar Mercenary",
+      "rank": 1
+    }
+  ],
+  "Specialist": [
+    { "name": "Shield Breaker",
+      "rank": 1
+    },
+    { "name": "Scourge Hound",
+      "rank": 1
+    },
+    { "name": "Whitemane Duelist",
+      "rank": 1
+    },
+    { "name": "Moonclave Executioner",
+      "rank": 1
+    },
+    { "name": "Pack Master Kozakar",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "Blood Engine",
+      "rank": 2
+    },
+    { "name": "Ravener Alpha",
+      "rank": 2
+    },
+    { "name": "Gregorio don Sissora",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Dragonslayer",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Duke Anton don Genoria",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

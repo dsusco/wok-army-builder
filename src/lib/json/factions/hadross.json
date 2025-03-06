@@ -1,0 +1,96 @@
+{ "name": "Hadross",
+  "Leader": [
+    { "name": "Deepmen Kaxes",
+      "rank": 1
+    },
+    { "name": "Mussellar Sergeant",
+      "rank": 1
+    },
+    { "name": "Torvosh the Bannerman",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Gutter Friar",
+      "rank": 1
+    },
+    { "name": "Ooroth of Sysor Deep",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Frenzy Charger",
+      "rank": 1
+    },
+    { "name": "Pit Boss",
+      "rank": 1
+    },
+    { "name": "Gar, the Gladiator",
+      "rank": 2,
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Deepmen Guardian",
+      "rank": 1
+    },
+    { "name": "Deepman Nephrodus",
+      "rank": 2
+    },
+    { "name": "Sevridan Gutter",
+      "rank": 2
+    },
+    { "name": "Carcharian Frenzy",
+      "rank": 2
+    },
+    { "name": "Pit Fighter",
+      "rank": 2
+    }
+  ],
+  "Specialist": [
+    { "name": "Deep Caller",
+      "rank": 1
+    },
+    { "name": "Calith Reaver",
+      "rank": 1
+    },
+    { "name": "Shell Cracker",
+      "rank": 1
+    },
+    { "name": "Neritic Horror",
+      "rank": 1
+    },
+    { "name": "Voth Barbarian of the Deep",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "Sylla, Sea-Wytch of Mallegar Depths",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "Oresund Cavalier",
+      "rank": 2
+    },
+    { "name": "Immanid Kraken",
+      "rank": 2
+    },
+    { "name": "The Oracle of Ulloth",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ephramaki, the Deepcaller Lord",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ilva, the Syren of Kaldeth Strait",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

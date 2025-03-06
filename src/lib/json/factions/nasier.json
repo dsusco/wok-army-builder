@@ -1,0 +1,96 @@
+{ "name": "Nasier",
+  "Leader": [
+    { "name": "Ashmen Hakar",
+      "rank": 1
+    },
+    { "name": "Firehawk Raid Leader",
+      "rank": 1
+    },
+    { "name": "Alyana Heska",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Pelegarth Howl",
+      "rank": 1
+    },
+    { "name": "Brute Warden",
+      "rank": 1
+    },
+    { "name": "Elsis Tagil, The Wail of War",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Unmasked",
+      "rank": 1
+    },
+    { "name": "Arkan Thesh",
+      "rank": 2,
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Ashmen Swordsman",
+      "rank": 1
+    },
+    { "name": "Ashmen Firehawk",
+      "rank": 2
+    },
+    { "name": "Pelegarth Bloodmask",
+      "rank": 1
+    },
+    { "name": "Pelegarth Brute",
+      "rank": 2
+    },
+    { "name": "Fel Hammer",
+      "rank": 2
+    }
+  ],
+  "Specialist": [
+    { "name": "Longhorn",
+      "rank": 1
+    },
+    { "name": "Rathor",
+      "rank": 1
+    },
+    { "name": "Arkazan Greatwing",
+      "rank": 1
+    },
+    { "name": "Sarvoth Shadow-Veil",
+      "rank": 1
+    },
+    { "name": "Izari Warhounds",
+      "rank": 1
+    },
+    { "name": "Vallenya Rhabar, The Shadow’s Step",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "Greathorn",
+      "rank": 2
+    },
+    { "name": "The Bloodchild",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Shadrus Arikim",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Blind Hakar",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Kor Kallum, Greatwing Prototype",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

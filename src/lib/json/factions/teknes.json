@@ -1,0 +1,96 @@
+{ "name": "Teknes",
+  "Leader": [
+    { "name": "Union Boss",
+      "rank": 1
+    },
+    { "name": "Flight Captain",
+      "rank": 1
+    },
+    { "name": "The Ironward",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Yevrozov, The Bloody Spear",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Defender Linemen Cotroller",
+      "rank": 1
+    },
+    { "name": "Warsmith Captain",
+      "rank": 1
+    },
+    { "name": "Defender Raeth Sevisk",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Addanii Brood Masterminds",
+      "rank": 1
+    },
+    { "name": "Timoshkin",
+      "rank": 2,
+      "character": true
+    }
+  ],
+  "Infantry": [
+    { "name": "Union Worker",
+      "rank": 1
+    },
+    { "name": "Union Bombardier",
+      "rank": 2
+    },
+    { "name": "Defender Lineman",
+      "rank": 1
+    },
+    { "name": "Warsmith",
+      "rank": 2
+    },
+    { "name": "Addanii Brood Warrior",
+      "rank": 2
+    }
+  ],
+  "Specialist": [
+    { "name": "The Zaalak",
+      "rank": 1
+    },
+    { "name": "Galvanic Defender",
+      "rank": 1
+    },
+    { "name": "War Stomper",
+      "rank": 1
+    },
+    { "name": "Union Butcher",
+      "rank": 1
+    },
+    { "name": "Molotok, The Iron Juggernaut",
+      "rank": 1,
+      "character": true
+    },
+    { "name": "C.A.G.E.",
+      "rank": 2
+    },
+    { "name": "Hateforged Titan",
+      "rank": 2
+    },
+    { "name": "Sorik the Unfinished",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "The Mighty Taur",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Lineman Boris",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Ironeyes",
+      "rank": 2,
+      "character": true
+    },
+    { "name": "Dame Allison, The Twilight Knight",
+      "rank": 2,
+      "character": true
+    }
+  ]
+}

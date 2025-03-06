@@ -1,0 +1,29 @@
+{
+  "Patrol": {
+    "Leader": 2,
+    "Infantry": 12,
+    "Specialist": 2
+  },
+  "Skirmish": {
+    "Leader": 3,
+    "Infantry": 18,
+    "Specialist": 2,
+    "Option Lists": 2,
+    "Options": 6
+  },
+  "Battle": {
+    "Leader": 5,
+    "Infantry": 24,
+    "Specialist": 4,
+    "Option Lists": 2,
+    "Options": 12
+  },
+  "Modified Skirmish": {
+    "Leader": 4,
+    "Infantry": 18,
+    "Specialist": 2,
+    "Option Lists": 2,
+    "Options": 18
+  },
+  "Custom": {}
+}
