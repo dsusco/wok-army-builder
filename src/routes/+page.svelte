@@ -1,2 +1,26 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import * as Tabs from '$lib/components/ui/tabs/index.js';
+  import FactionTab from '$lib/components/faction_tab.svelte';
+  import ArmyTab from '$lib/components/army_tab.svelte';
+  import RecordSheetTab from '$lib/components/record_sheet_tab.svelte';
+</script>
+
+<Tabs.Root value="faction">
+  <Tabs.List>
+    <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
+    <Tabs.Trigger value="army">Army</Tabs.Trigger>
+    <Tabs.Trigger value="record_sheet">Record Sheet</Tabs.Trigger>
+  </Tabs.List>
+
+  <Tabs.Content value="faction">
+    <FactionTab />
+  </Tabs.Content>
+
+  <Tabs.Content value="army">
+    <ArmyTab />
+  </Tabs.Content>
+
+  <Tabs.Content value="record_sheet">
+    <RecordSheetTab />
+  </Tabs.Content>
+</Tabs.Root>
