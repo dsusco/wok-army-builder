@@ -1,15 +1,20 @@
 <script>
-  import army from '$lib/components/army.svelte.js';
+  import * as Accordion from '$lib/components/ui/accordion/index.js';
   import TypeGrouping from '$lib/components/type_grouping.svelte';
+  import army from '$lib/components/army.svelte.js';
 </script>
 
-<div class="list _core">
-  <div class="title">Core List</div>
-
+<Accordion.Root type="single" value={`type_grouping_${army.MODEL_TYPES[0]}`}>
   {#each Object.entries(army.gameSize).filter(([type]) => army.MODEL_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-    <TypeGrouping {type} {totalRanks} />
+    <Accordion.Item value={`type_grouping_${type}`}>
+      <Accordion.Trigger>{type} (/{totalRanks})</Accordion.Trigger>
+
+      <Accordion.Content>
+        <TypeGrouping {type} />
+      </Accordion.Content>
+    </Accordion.Item>
   {/each}
-</div>
+</Accordion.Root>
 
 <style lang="scss">
 </style>
