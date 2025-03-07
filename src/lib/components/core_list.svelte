@@ -10,7 +10,7 @@
   <Accordion.Content>
     <Accordion.Root type="single" value={`type_grouping_${army.MODEL_TYPES[0]}`}>
       {#each Object.entries(army.gameSize).filter(([type]) => army.MODEL_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-        <TypeGrouping {type} {totalRanks} accordionItemValue={`type_grouping_${type}`} />
+        <TypeGrouping {type} {totalRanks} />
       {/each}
     </Accordion.Root>
   </Accordion.Content>

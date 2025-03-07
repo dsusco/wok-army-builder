@@ -8,10 +8,17 @@
       totalRanks,
       ranksRemaining,
       optionList,
-      accordionItemValue } = $props();
+      accordionItemValue } = $props(),
+    accordionValue = $derived.by(() => {
+      let accordionValue = `type_grouping_${type}`
+
+      if (optionList !== undefined) return `option_list_${optionList}_${accordionValue}`
+
+      return accordionValue;
+    })
 </script>
 
-<Accordion.Item value={accordionItemValue}>
+<Accordion.Item value={accordionValue}>
   <Accordion.Trigger>{type} {#if optionList === undefined}({army.rankSums[type]}/{totalRanks}){/if}</Accordion.Trigger>
 
   <Accordion.Content>

@@ -18,7 +18,7 @@
   <Accordion.Content>
     <Accordion.Root type="single" value={`option_list_${index}_type_grouping_${army.OPTION_TYPES[0]}`}>
       {#each Object.entries(army.gameSize).filter(([type]) => army.OPTION_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-        <TypeGrouping {type} ranksRemaining={army.gameSize.Options - army.rankSums.optionLists[index]} optionList={index} accordionItemValue={`option_list_${index}_type_grouping_${type}`} />
+        <TypeGrouping {type} ranksRemaining={army.gameSize.Options - army.rankSums.optionLists[index]} optionList={index} />
       {/each}
     </Accordion.Root>
   </Accordion.Content>
