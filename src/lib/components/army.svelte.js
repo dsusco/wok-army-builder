@@ -6,11 +6,13 @@ class Army {
   MODEL_TYPES = ['Leader', 'Infantry', 'Specialist'];
   OPTION_TYPES = ['Infantry', 'Specialist'];
 
-	#factionPath = $state('');
+  #faction = $derived(FACTIONS[this.#factionPath] || {});
 
-	#gameSize = $derived(gameSizes[this.#gameSizeLabel] || {});
+  #factionPath = $state('');
 
-	#gameSizeLabel = $state('');
+  #gameSize = $derived(gameSizes[this.#gameSizeLabel] || {});
+
+  #gameSizeLabel = $state('');
 
   #models = $derived(
     this.MODEL_TYPES
@@ -55,6 +57,10 @@ class Army {
   constructor (factionPath = '', gameSizeLabel = '') {
     this.factionPath = factionPath;
     this.gameSizeLabel = gameSizeLabel;
+  }
+
+  get faction () {
+    return this.#faction;
   }
 
   get factionPath () {

@@ -1,0 +1,20 @@
+<script>
+  import army from '$lib/components/model_tr.svelte';
+
+  let
+    { name,
+      rank,
+      character,
+      type,
+      count } = $props();
+
+</script>
+
+<tr class={ [ { hidden: count < 1 } ] }>
+  <td>{name}</td>
+  <td>Rank {rank}{character ? ' Character ' : ''} {type}</td>
+  <td>{count}</td>
+</tr>
+
+<style lang="scss">
+</style>
