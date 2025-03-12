@@ -76,6 +76,4 @@
 </div>
 
 <style lang="scss">
-  .model {
-  }
 </style>

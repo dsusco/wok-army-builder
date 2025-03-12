@@ -76,3 +76,6 @@
     {/each}
   </table>
 {/each}
+
+<style lang="scss">
+</style>
