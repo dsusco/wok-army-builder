@@ -14,8 +14,10 @@ class Army {
 
   #gameSizeLabel = $state('');
 
-  #models = $derived(
-    this.MODEL_TYPES
+  #models = $derived.by(() => {
+    if (!this.#factionPath || !this.#gameSizeLabel) return {};
+
+    return this.MODEL_TYPES
       .reduce(
         (models, type) => {
           FACTIONS[this.#factionPath][type].forEach((model) => {
@@ -29,7 +31,8 @@ class Army {
           });
 
           return models;
-        }, {}));
+        }, {});
+  });
 
   #rankSums = $derived.by(() => {
     let rankSums = Object.fromEntries(this.MODEL_TYPES.map(key => [key, 0]))
