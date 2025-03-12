@@ -8,7 +8,7 @@
 <AccordionPrimitive.Content
 	bind:ref
 	class={cn(
-		"border border-current rounded-b-md p-3 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden transition-all",
+		"border border-current rounded-b-md p-3 pb-2 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden transition-all",
 		className
 	)}
 	{...restProps}

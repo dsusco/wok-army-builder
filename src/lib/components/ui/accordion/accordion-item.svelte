@@ -5,4 +5,4 @@
 	let { ref = $bindable(null), class: className, ...restProps } = $props();
 </script>
 
-<AccordionPrimitive.Item bind:ref class={cn("border-b", className)} {...restProps} />
+<AccordionPrimitive.Item bind:ref class={cn("mb-1", className)} {...restProps} />
