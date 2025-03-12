@@ -16,16 +16,18 @@
   }
 
   $effect(() => {
-    if (army.gameSizeLabel && army.factionPath) setTabsValue('army');
-  })
+    if (army.gameSizeLabel && army.factionPath) {
+      setTabsValue('army');
+    }
+  });
 </script>
 
 <svelte:head>
 	<title>Wrath of Kings Army Builder</title>
 </svelte:head>
 
-<Tabs.Root bind:value={getTabsValue, setTabsValue}>
-  <Tabs.List>
+<Tabs.Root class="w-full" bind:value={getTabsValue, setTabsValue}>
+  <Tabs.List class="w-full">
     <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
     <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="army">Army</Tabs.Trigger>
     <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="record_sheet">Record Sheet</Tabs.Trigger>
