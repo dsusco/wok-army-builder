@@ -3,12 +3,31 @@
   import CoreList from '$lib/components/core_list.svelte';
   import OptionList from '$lib/components/option_list.svelte';
   import army from '$lib/components/army.svelte.js';
+
+  let accordionValue = $state('faction');
+
+  function getAccordionValue () {
+    return accordionValue;
+  }
+
+  function setAccordionValue (newAccordionValue) {
+    accordionValue = newAccordionValue;
+  }
+
+  $effect(() => {
+    if (army.gameSizeLabel && army.factionPath) {
+      setAccordionValue('core_list');
+    }
+  });
 </script>
 
-<Accordion.Root type="single" value="core_list">
+<Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>
   <CoreList />
 
   {#each { length: army.gameSize['Option Lists'] }, index}
     <OptionList {index} />
   {/each}
 </Accordion.Root>
+
+<style lang="scss">
+</style>
