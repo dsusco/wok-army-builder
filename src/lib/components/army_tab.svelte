@@ -21,7 +21,7 @@
   });
 </script>
 
-<Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>
+<Accordion.Root class="max-w-[45rem] mx-auto" type="single" bind:value={getAccordionValue, setAccordionValue}>
   <CoreList />
 
   {#each { length: army.gameSize['Option Lists'] }, index}

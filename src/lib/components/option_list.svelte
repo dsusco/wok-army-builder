@@ -28,7 +28,11 @@
 </script>
 
 <Accordion.Item value={`option_list_${index}`}>
-  <Accordion.Trigger>Option List #{index + 1} ({rankSums}/{army.gameSize.Options / 3})</Accordion.Trigger>
+  <Accordion.Trigger>
+    <span class="basis-full px-2 text-left">Option List #{index + 1}</span>
+
+    <span>({rankSums}/{army.gameSize.Options / 3})</span>
+  </Accordion.Trigger>
 
   <Accordion.Content>
     <Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>

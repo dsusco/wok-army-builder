@@ -21,7 +21,9 @@
 </script>
 
 <Accordion.Item value="core_list">
-  <Accordion.Trigger>Core List</Accordion.Trigger>
+  <Accordion.Trigger>
+    <span class="basis-full px-2 text-left">Core List</span>
+  </Accordion.Trigger>
 
   <Accordion.Content>
     <Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>

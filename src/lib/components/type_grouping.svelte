@@ -19,7 +19,13 @@
 </script>
 
 <Accordion.Item value={accordionValue}>
-  <Accordion.Trigger>{type} {#if optionList === undefined}({army.rankSums[type]}/{totalRanks}){/if}</Accordion.Trigger>
+  <Accordion.Trigger>
+    <span class="basis-full px-2 text-left">{type}</span>
+
+    {#if optionList === undefined}
+      <span>({army.rankSums[type]}/{totalRanks})</span>
+    {/if}
+  </Accordion.Trigger>
 
   <Accordion.Content>
     {#each Object.values(army.models).filter((model) => model.type === type) as model}
