@@ -67,12 +67,11 @@
   }
 </script>
 
-<div class="model">
-  {name}
-  (Rank {rank}{character ? ' Character' : ''})
-  <Button disabled={disableDecrement} onclick={() => setCount(count-1)}>-</Button>
-  {count}
-  <Button disabled={disableIncrement} onclick={() => setCount(count+1)}>+</Button>
+<div class="flex items-center gap-1 space-y-1">
+  <span class="basis-full">{name} (Rank {rank}{character ? ' Character' : ''})</span>
+  <Button class="w-10" disabled={disableDecrement} onclick={() => setCount(count-1)}>-</Button>
+  <span class="text-center w-10">{count}</span>
+  <Button class="w-10" disabled={disableIncrement} onclick={() => setCount(count+1)}>+</Button>
 </div>
 
 <style lang="scss">

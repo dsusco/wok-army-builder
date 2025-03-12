@@ -8,7 +8,7 @@
 </script>
 
 <Select.Root bind:value={army.gameSizeLabel} type="single">
-  <Select.Trigger>{army.gameSizeLabel ? army.gameSizeLabel : 'Please select a game size…'}</Select.Trigger>
+  <Select.Trigger class="max-w-xs mx-auto mb-3">{army.gameSizeLabel ? army.gameSizeLabel : 'Please select a game size…'}</Select.Trigger>
 
   <Select.Content>
     {#each Object.entries(gameSizes) as [gameSizeLabel]}
@@ -17,7 +17,7 @@
   </Select.Content>
 </Select.Root>
 
-<RadioGroup.Root bind:value={army.factionPath}>
+<RadioGroup.Root class="max-w-xs mx-auto" bind:value={army.factionPath}>
   {#each Object.entries(FACTIONS) as [factionPath, faction]}
     <div>
       <RadioGroup.Item value={factionPath} id={`${faction.name}_faction_radio`} />
@@ -25,3 +25,6 @@
     </div>
   {/each}
 </RadioGroup.Root>
+
+<style lang="scss">
+</style>
