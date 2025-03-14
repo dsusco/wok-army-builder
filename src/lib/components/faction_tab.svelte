@@ -5,6 +5,12 @@
   import FACTIONS from '$lib/components/factions.svelte.js';
   import army from '$lib/components/army.svelte.js';
   import gameSizes from '$lib/json/game_sizes.json';
+
+  function factionImgSrc(factionPath) {
+    return factionPath
+      .replace('/src/lib/json/factions', 'images')
+      .replace('json', 'png');
+  }
 </script>
 
 <Select.Root bind:value={army.gameSizeLabel} type="single">
@@ -17,12 +23,13 @@
   </Select.Content>
 </Select.Root>
 
-<RadioGroup.Root class="max-w-xs mx-auto" bind:value={army.factionPath}>
+<RadioGroup.Root class="max-w-sm mx-auto" bind:value={army.factionPath}>
   {#each Object.entries(FACTIONS) as [factionPath, faction]}
-    <div>
-      <RadioGroup.Item value={factionPath} id={`${faction.name}_faction_radio`} />
-      <Label for={`${faction.name}_faction_radio`}>{faction.name}</Label>
-    </div>
+    <Label>
+      <RadioGroup.Item class="sr-only peer" value={factionPath} />
+      <img class="box-content bg-primary/10 border border-primary cursor-pointer p-2 hover:bg-secondary/40 peer-data-[state=checked]:bg-secondary/40 ring-ring ring-offset-background ring-offset-2 peer-focus:ring-2
+      " alt={faction.name} src={factionImgSrc(factionPath)}>
+    </Label>
   {/each}
 </RadioGroup.Root>
 

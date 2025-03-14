@@ -4,6 +4,7 @@
 </script>
 
 <table>
+  <caption>Conquest of Kings Record Sheet</caption>
   <tbody>
     <tr>
       <td><b>Player Name:</b></td>
@@ -12,7 +13,7 @@
   </tbody>
 </table>
 
-<table>
+<table class="text-center">
   <thead>
     <tr>
       <th>Round</th>
@@ -78,4 +79,39 @@
 {/each}
 
 <style lang="scss">
+  table {
+    font-size: calc(14em/16);
+    margin: 0 auto 1rem;
+    table-layout: fixed;
+    width: 45rem;
+  }
+
+  caption {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-block: .25em;
+    text-transform: uppercase;
+  }
+
+  thead {
+    border-bottom: 2px solid;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid;
+  }
+
+  th,
+  td {
+    border: 1px solid;
+  }
+
+  th {
+    text-transform: uppercase;
+  }
+
+  th,
+  td {
+    padding: .25em .5em;
+  }
 </style>

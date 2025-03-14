@@ -17,4 +17,21 @@
 </tr>
 
 <style lang="scss">
+  th,
+  td {
+    border: 1px solid;
+  }
+
+  th {
+    text-transform: uppercase;
+  }
+
+  th,
+  td {
+    padding: .25em .5em;
+  }
+
+  td:last-child {
+    text-align: right;
+  }
 </style>
