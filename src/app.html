@@ -9,13 +9,13 @@
 
   <body data-sveltekit-preload-data="hover">
     <div class="flex flex-wrap justify-center max-w-6xl mx-auto">
-      <header class="basis-full">
+      <header id="header" class="basis-full">
         <h1 class="sr-only">Wrath of Kings Army Builder</h1>
 
         <img alt="Wrath of Kings Army Builder" src="images/wok-header.png">
       </header>
 
-      <main class="basis-full" style="display: contents">
+      <main id="main" class="basis-full" style="display: contents">
         %sveltekit.body%
 
         <noscript>
@@ -23,7 +23,7 @@
         </noscript>
       </main>
 
-      <footer class="basis-full text-center border-t border-primary p-3 text-xs">
+      <footer id="footer" class="basis-full text-center border-t border-primary p-3 text-xs">
         <p class="mb-3">This website is completely unofficial and in no way endorsed by CoolMiniOrNot <abbr title="Incorporated">Inc</abbr>.</p>
 
         <p>This Wrath of Kings army builder is open source and maintained on <a class="text-yellow-800 hover:text-amber-700 hover:underline" href="https://github.com/dsusco/wok-army-builder">GitHub</a>.</p>

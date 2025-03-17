@@ -21,6 +21,8 @@ class Army {
 
   #gameSizeLabel = $state('');
 
+  #initialized = $derived(this.#factionPath && this.#gameSizeLabel);
+
   #models = $derived.by(() => {
     if (!this.#factionPath || !this.#gameSizeLabel) return {};
 
@@ -98,6 +100,10 @@ class Army {
 
   get gameSizeLabel () {
     return this.#gameSizeLabel;
+  }
+
+  get initialized () {
+    return this.#initialized;
   }
 
   get models () {

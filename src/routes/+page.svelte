@@ -32,35 +32,33 @@
 
 <Dialog.Root>
   <Tabs.Root class="w-full" bind:value={getTabsValue, setTabsValue}>
-    <Tabs.List class="w-full">
+    <Tabs.List id="nav" class="w-full">
       <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
-      <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="army">Army</Tabs.Trigger>
-      <Tabs.Trigger disabled={!army.gameSizeLabel || !army.factionPath} value="record_sheet">Record Sheet</Tabs.Trigger>
+      <Tabs.Trigger disabled={!army.initialized} value="army">Army</Tabs.Trigger>
+      <Tabs.Trigger disabled={!army.initialized} value="record_sheet">Record Sheet</Tabs.Trigger>
     </Tabs.List>
 
-    <div class="float-right">
+    <div id="actions" class="float-right">
       <Dialog.Trigger>
         <span class="sr-only">Share</span>
         <i class="fa fa-share p-2"></i>
       </Dialog.Trigger>
-      <button>
+      <button on:click={window.print()}>
         <span class="sr-only">Print</span>
         <i class="fa fa-print p-2"></i>
       </button>
     </div>
 
-    <Tabs.Content value="faction">
+    <Tabs.Content id="faction_tab" value="faction">
       <FactionTab />
     </Tabs.Content>
 
-    <Tabs.Content value="army">
+    <Tabs.Content id="army_tab" value="army">
       <ArmyTab />
     </Tabs.Content>
 
-    <Tabs.Content value="record_sheet">
-      {#if Object.keys(army.models).length > 0}
-        <RecordSheetTab />
-      {/if}
+    <Tabs.Content id="record_sheet_tab" value="record_sheet">
+      <RecordSheetTab />
     </Tabs.Content>
   </Tabs.Root>
 
@@ -74,3 +72,33 @@
     </Dialog.Header>
   </Dialog.Content>
 </Dialog.Root>
+
+<style lang="scss">
+  @media print {
+    @page {
+      size: auto;
+    }
+
+    :global(body) {
+      background-color: #fff;
+    }
+
+    :global(
+      #header,
+      #nav,
+      #actions,
+      #faction_tab,
+      #army_tab,
+      #footer
+    ) {
+      display: none;
+    }
+
+    :global(#record_sheet_tab) {
+      color: #000;
+      display: block !important;
+      margin: 0;
+      padding: 0;
+    }
+  }
+</style>

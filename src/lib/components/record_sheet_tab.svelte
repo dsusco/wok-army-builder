@@ -48,13 +48,15 @@
     </tr>
   </thead>
 
-  {#each army.MODEL_TYPES as type}
-    <tbody>
-      {#each army.faction[type] as model}
-        <ModelTR {...model} {type} count={army.models[model.name].counts.coreList} />
-      {/each}
-    </tbody>
-  {/each}
+  {#if army.initialized}
+    {#each army.MODEL_TYPES as type}
+      <tbody>
+        {#each army.faction[type] as model}
+          <ModelTR {...model} {type} count={army.models[model.name].counts.coreList} />
+        {/each}
+      </tbody>
+    {/each}
+  {/if}
 </table>
 
 {#each { length: army.gameSize['Option Lists'] }, index }
@@ -68,13 +70,15 @@
       </tr>
     </thead>
 
-    {#each army.OPTION_TYPES as type}
-      <tbody>
-        {#each army.faction[type] as model}
-          <ModelTR {...model} {type} count={army.models[model.name].counts.optionLists[index]} />
-        {/each}
-      </tbody>
-    {/each}
+    {#if army.initialized}
+      {#each army.OPTION_TYPES as type}
+        <tbody>
+          {#each army.faction[type] as model}
+            <ModelTR {...model} {type} count={army.models[model.name].counts.optionLists[index]} />
+          {/each}
+        </tbody>
+      {/each}
+    {/if}
   </table>
 {/each}
 
@@ -109,5 +113,11 @@
 
   th {
     text-transform: uppercase;
+  }
+
+  @media print {
+    table {
+      width: 100%;
+    }
   }
 </style>
