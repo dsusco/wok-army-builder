@@ -104,14 +104,10 @@
   th,
   td {
     border: 1px solid;
+    padding: .25em .5em;
   }
 
   th {
     text-transform: uppercase;
-  }
-
-  th,
-  td {
-    padding: .25em .5em;
   }
 </style>
