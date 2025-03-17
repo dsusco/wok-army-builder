@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+  import { page } from '$app/state';
   import { Label } from '$lib/components/ui/label/index.js';
   import * as RadioGroup from '$lib/components/ui/radio-group/index.js';
   import * as Select from '$lib/components/ui/select/index.js';
@@ -11,6 +13,13 @@
       .replace('/src/lib/json/factions', 'images')
       .replace('json', 'png');
   }
+
+  onMount(() => {
+    let params = Object.fromEntries(page.url.searchParams.entries());
+
+    if (params.gameSize) army.gameSizeLabel = params.gameSize;
+    if (params.faction) army.factionPath = `/src/lib/json/factions/${params.faction}.json`;
+  });
 </script>
 
 <Select.Root bind:value={army.gameSizeLabel} type="single">

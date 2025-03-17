@@ -42,6 +42,8 @@
   </Tabs.Content>
 
   <Tabs.Content value="record_sheet">
-    <RecordSheetTab />
+    {#if Object.keys(army.models).length > 0}
+      <RecordSheetTab />
+    {/if}
   </Tabs.Content>
 </Tabs.Root>

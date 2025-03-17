@@ -10,6 +10,12 @@ class Army {
 
   #factionPath = $state('');
 
+  #factionParam = $derived.by(() => {
+    if (!this.#factionPath) return '';
+
+    return this.#factionPath.match(/(\w+)\.json$/)[1]
+  });
+
   #gameSize = $derived(gameSizes[this.#gameSizeLabel] || {});
 
   #gameSizeLabel = $state('');
@@ -57,6 +63,17 @@ class Army {
     return rankSums;
   });
 
+  #url = $derived.by(() => {
+    return encodeURI(
+      `${page.url.origin}?faction=${this.#factionParam}&gameSize=${this.#gameSizeLabel}&models=` +
+      JSON.stringify(Object.values(this.#models).reduce((url, model) => {
+        url.push([model.counts.coreList].concat(model.counts.optionLists));
+
+        return url;
+      }, []))
+    );
+  });
+
   constructor (factionPath = '', gameSizeLabel = '') {
     this.factionPath = factionPath;
     this.gameSizeLabel = gameSizeLabel;
@@ -68,6 +85,10 @@ class Army {
 
   get factionPath () {
     return this.#factionPath;
+  }
+
+  get factionParam () {
+    return this.#factionParam;
   }
 
   get gameSize () {
@@ -84,6 +105,10 @@ class Army {
 
   get rankSums () {
     return this.#rankSums;
+  }
+
+  get url () {
+    return this.#url;
   }
 
   set factionPath (factionPath) {

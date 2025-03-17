@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+  import { page } from '$app/state';
   import { Button } from '$lib/components/ui/button/index.js';
   import army from '$lib/components/army.svelte.js';
 
@@ -65,6 +67,20 @@
       counts.optionLists[optionList] = newCount;
     }
   }
+
+  onMount(() => {
+    let params = Object.fromEntries(page.url.searchParams.entries());
+
+    if (params.models) {
+      let paramCounts = JSON.parse(params.models)[Object.keys(army.models).indexOf(name)];
+
+      if (optionList === undefined) {
+        setCount(paramCounts[0]);
+      } else {
+        setCount(paramCounts[optionList + 1]);
+      }
+    }
+  });
 </script>
 
 <div class="flex items-center gap-1 space-y-1">
