@@ -1,3 +1,4 @@
+import { page } from '$app/state';
 import FACTIONS from '$lib/components/factions.svelte.js';
 import Model from '$lib/components/model.svelte.js';
 import gameSizes from '$lib/json/game_sizes.json';
