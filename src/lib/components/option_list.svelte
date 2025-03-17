@@ -42,6 +42,3 @@
     </Accordion.Root>
   </Accordion.Content>
 </Accordion.Item>
-
-<style lang="scss">
-</style>

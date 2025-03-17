@@ -41,6 +41,3 @@
     </Label>
   {/each}
 </RadioGroup.Root>
-
-<style lang="scss">
-</style>

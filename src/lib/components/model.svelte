@@ -89,6 +89,3 @@
   <span class="text-center w-10">{count}</span>
   <Button class="w-10" disabled={disableIncrement} onclick={() => setCount(count+1)}>+</Button>
 </div>
-
-<style lang="scss">
-</style>

@@ -28,6 +28,3 @@
     <OptionList {index} />
   {/each}
 </Accordion.Root>
-
-<style lang="scss">
-</style>
