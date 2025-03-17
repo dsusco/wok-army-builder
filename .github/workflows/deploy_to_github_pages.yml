@@ -1,0 +1,37 @@
+name: Deploy to wok-army-builder.github.io
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout wok-army-builder
+        uses: actions/checkout@v4
+      - name: Checkout wok-army-builder.github.io
+        uses: actions/checkout@v4
+        with:
+          repository: wok-army-builder/wok-army-builder.github.io
+          ssh-key: ${{ secrets.DEPLOY_KEY }}
+          path: wok-army-builder.github.io
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+          node-version: 22.14.0
+          cache: npm
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Copy Build
+        run: |
+          rm -Rf wok-army-builder.github.io/*
+          cp -Rf build/* wok-army-builder.github.io/
+      - name: Deploy
+        run: |
+          cd wok-army-builder.github.io/
+          git checkout README.md
+          git add .
+          git commit -m '${{ github.repository }} ${{ github.sha }}'
+          git push -f origin main
