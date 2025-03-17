@@ -23,7 +23,7 @@
     <span class="basis-full px-2 text-left">{type}</span>
 
     {#if optionList === undefined}
-      <span>({army.rankSums[type]}/{totalRanks})</span>
+      <span>({army.rankSums[type]}{#if totalRanks !== undefined}/{totalRanks}{/if})</span>
     {/if}
   </Accordion.Trigger>
 

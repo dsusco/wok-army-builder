@@ -36,7 +36,7 @@
 
   <Accordion.Content>
     <Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>
-      {#each Object.entries(army.gameSize).filter(([type]) => army.OPTION_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
+      {#each army.OPTION_TYPES as type}
         <TypeGrouping {type} ranksRemaining={army.gameSize.Options - army.rankSums.optionLists[index]} optionList={index} />
       {/each}
     </Accordion.Root>

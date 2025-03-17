@@ -27,8 +27,8 @@
 
   <Accordion.Content>
     <Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>
-      {#each Object.entries(army.gameSize).filter(([type]) => army.MODEL_TYPES.indexOf(type) >= 0) as [type, totalRanks]}
-        <TypeGrouping {type} {totalRanks} />
+      {#each army.MODEL_TYPES as type}
+        <TypeGrouping {type} totalRanks={army.gameSize[type]} />
       {/each}
     </Accordion.Root>
   </Accordion.Content>
