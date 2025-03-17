@@ -3,65 +3,48 @@
   import army from '$lib/components/army.svelte.js';
 </script>
 
-<table>
-  <caption>Conquest of Kings Record Sheet</caption>
-  <tbody>
-    <tr>
-      <td><b>Player Name:</b></td>
-      <td><b>Faction:</b> {army.faction.name}</td>
-    </tr>
-  </tbody>
-</table>
-
-<table class="text-center">
-  <thead>
-    <tr>
-      <th>Round</th>
-      <th>Game Result</th>
-      <th>Motivation</th>
-      <th><abbr title="Leadership">LD</abbr> Points</th>
-      <th>Rank Points</th>
-      <th>Opponent</th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each { length: 5 }, index }
-      <tr>
-        <td>{index + 1}</td>
-        <td><abbr title="Win">W</abbr>/<abbr title="Loss">L</abbr>/<abbr title="Tie">T</abbr></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    {/each}
-  </tbody>
-</table>
-
-<table>
-  <caption>Core List</caption>
-  <thead>
-    <tr>
-      <th>Model Name</th>
-      <th>Type</th>
-      <th>Quantity</th>
-    </tr>
-  </thead>
-
-  {#if army.initialized}
-    {#each army.MODEL_TYPES as type}
-      <tbody>
-        {#each army.faction[type] as model}
-          <ModelTR {...model} {type} count={army.models[model.name].counts.coreList} />
-        {/each}
-      </tbody>
-    {/each}
-  {/if}
-</table>
-
-{#each { length: army.gameSize['Option Lists'] }, index }
+<div class="overflow-x-auto">
   <table>
-    <caption>Option List #{index + 1}</caption>
+    <caption>Conquest of Kings Record Sheet</caption>
+    <tbody>
+      <tr>
+        <td><b>Player Name:</b></td>
+        <td><b>Faction:</b> {army.faction.name}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="overflow-x-auto">
+  <table class="text-center">
+    <thead>
+      <tr>
+        <th>Round</th>
+        <th>Game Result</th>
+        <th>Motivation</th>
+        <th><abbr title="Leadership">LD</abbr> Points</th>
+        <th>Rank Points</th>
+        <th>Opponent</th>
+      </tr>
+    </thead>
+    <tbody>
+      {#each { length: 5 }, index }
+        <tr>
+          <td>{index + 1}</td>
+          <td><abbr title="Win">W</abbr>/<abbr title="Loss">L</abbr>/<abbr title="Tie">T</abbr></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
+</div>
+
+<div class="overflow-x-auto">
+  <table>
+    <caption>Core List</caption>
     <thead>
       <tr>
         <th>Model Name</th>
@@ -71,15 +54,40 @@
     </thead>
 
     {#if army.initialized}
-      {#each army.OPTION_TYPES as type}
+      {#each army.MODEL_TYPES as type}
         <tbody>
           {#each army.faction[type] as model}
-            <ModelTR {...model} {type} count={army.models[model.name].counts.optionLists[index]} />
+            <ModelTR {...model} {type} count={army.models[model.name].counts.coreList} />
           {/each}
         </tbody>
       {/each}
     {/if}
   </table>
+</div>
+
+{#each { length: army.gameSize['Option Lists'] }, index }
+  <div class="overflow-x-auto">
+    <table>
+      <caption>Option List #{index + 1}</caption>
+      <thead>
+        <tr>
+          <th>Model Name</th>
+          <th>Type</th>
+          <th>Quantity</th>
+        </tr>
+      </thead>
+
+      {#if army.initialized}
+        {#each army.OPTION_TYPES as type}
+          <tbody>
+            {#each army.faction[type] as model}
+              <ModelTR {...model} {type} count={army.models[model.name].counts.optionLists[index]} />
+            {/each}
+          </tbody>
+        {/each}
+      {/if}
+    </table>
+  </div>
 {/each}
 
 <style lang="scss">

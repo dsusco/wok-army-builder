@@ -36,7 +36,7 @@
   {#each Object.entries(FACTIONS) as [factionPath, faction]}
     <Label>
       <RadioGroup.Item class="sr-only peer" value={factionPath} />
-      <img class="box-content bg-primary/10 border border-primary cursor-pointer p-2 hover:bg-secondary/40 peer-data-[state=checked]:bg-secondary/40 ring-ring ring-offset-background ring-offset-2 peer-focus:ring-2
+      <img class="box-border bg-primary/10 border border-primary cursor-pointer p-2 hover:bg-secondary/40 peer-data-[state=checked]:bg-secondary/40 ring-ring ring-offset-background ring-offset-2 peer-focus:ring-2
       " alt={faction.name} src={factionImgSrc(factionPath)}>
     </Label>
   {/each}
