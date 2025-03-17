@@ -33,6 +33,8 @@ jobs:
         run: |
           cd wok-army-builder.github.io/
           git checkout README.md
+          git config user.email '${{ secrets.USER_EMAIL }}'
+          git config user.name '${{ secrets.USER_NAME }}'
           git add .
           git commit -m '${{ github.repository }} ${{ github.sha }}'
           git push -f origin main
