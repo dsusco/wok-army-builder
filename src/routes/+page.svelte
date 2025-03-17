@@ -43,7 +43,7 @@
         <span class="sr-only">Share</span>
         <i class="fa fa-share p-2"></i>
       </Dialog.Trigger>
-      <button on:click={window.print()}>
+      <button onclick={window.print()}>
         <span class="sr-only">Print</span>
         <i class="fa fa-print p-2"></i>
       </button>
