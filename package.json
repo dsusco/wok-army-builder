@@ -1,8 +1,15 @@
 {
-	"name": "wok-army-builder",
-	"private": true,
-	"version": "0.0.1",
-	"type": "module",
+  "name": "wok-army-builder",
+  "version": "1.9.1",
+  "description": "An army builder for CoolMiniOrNot's Wrath of Kings.",
+  "homepage": "https://github.com/dsusco/wok-army-builder",
+  "bugs": "https://github.com/dsusco/wok-army-builder/issues",
+  "license": "ISC",
+  "author": "David Susco <dsusco@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dsusco/wok-army-builder.git"
+  },
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -46,5 +53,7 @@
 		"typescript": "^5.0.0",
 		"vite": "^6.0.0",
 		"vitest": "^3.0.0"
-	}
+	},
+  "private": true,
+  "type": "module"
 }
