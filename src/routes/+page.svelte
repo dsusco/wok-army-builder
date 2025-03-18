@@ -20,7 +20,7 @@
   function setTabsValue (newTabsValue) {
     tabsValue = newTabsValue;
   }
-  
+
   function setDialogModel (modelName = '') {
     dialogModel = army.models[modelName];
   }
@@ -30,7 +30,7 @@
       setTabsValue('army');
     }
   });
-  
+
   setContext('dialogContext', { setDialogModel });
 </script>
 
@@ -77,7 +77,7 @@
       <Textarea class="border-primary mb-3" value={army.url} readonly spellcheck="false" rows="8" />
       <Button class="block mx-auto" variant="default" onclick={() => navigator.clipboard.writeText(army.url)}>Copy</Button>
     {:else}
-      <img alt={dialogModel.name} src={`images/${army.factionFilename}/${dialogModel.filename}.png`}>
+      <img class="max-w-full mx-auto" alt={dialogModel.name} src={dialogModel.cardPath}>
     {/if}
   </Dialog.Content>
 </Dialog.Root>

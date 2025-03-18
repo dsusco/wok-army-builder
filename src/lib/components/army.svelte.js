@@ -35,6 +35,8 @@ class Army {
                 model.name,
                 model.rank,
                 model.character,
+                model.cardPath,
+                this.#faction.name,
                 type,
                 this.#gameSize['Option Lists']);
           });
