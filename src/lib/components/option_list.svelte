@@ -36,7 +36,7 @@
 
   <Accordion.Content>
     <Accordion.Root type="single" bind:value={getAccordionValue, setAccordionValue}>
-      {#each army.OPTION_TYPES as type}
+      {#each army.OPTION_TYPES as type (type)}
         <TypeGrouping {type} ranksRemaining={army.gameSize.Options - army.rankSums.optionLists[index]} optionList={index} />
       {/each}
     </Accordion.Root>

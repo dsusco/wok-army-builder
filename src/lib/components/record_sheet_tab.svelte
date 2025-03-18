@@ -54,9 +54,9 @@
     </thead>
 
     {#if army.initialized}
-      {#each army.MODEL_TYPES as type}
+      {#each army.MODEL_TYPES as type (type)}
         <tbody>
-          {#each army.faction[type] as model}
+          {#each army.faction[type] as model (model.name)}
             <ModelTR {...model} {type} count={army.models[model.name].counts.coreList} />
           {/each}
         </tbody>
@@ -78,9 +78,9 @@
       </thead>
 
       {#if army.initialized}
-        {#each army.OPTION_TYPES as type}
+        {#each army.OPTION_TYPES as type (type)}
           <tbody>
-            {#each army.faction[type] as model}
+            {#each army.faction[type] as model (model.name)}
               <ModelTR {...model} {type} count={army.models[model.name].counts.optionLists[index]} />
             {/each}
           </tbody>

@@ -7,8 +7,7 @@
     { type,
       totalRanks,
       ranksRemaining,
-      optionList,
-      accordionItemValue } = $props(),
+      optionList } = $props(),
     accordionValue = $derived.by(() => {
       let accordionValue = `type_grouping_${type}`
 
@@ -28,7 +27,7 @@
   </Accordion.Trigger>
 
   <Accordion.Content>
-    {#each Object.values(army.models).filter((model) => model.type === type) as model}
+    {#each Object.values(army.models).filter((model) => model.type === type) as model (model.name)}
       <Model {...model} ranksRemaining={ranksRemaining !== undefined ? ranksRemaining : totalRanks - army.rankSums[type]} {optionList} />
     {/each}
   </Accordion.Content>
