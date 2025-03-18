@@ -1,4 +1,5 @@
 <script>
+  import { setContext } from 'svelte';
   import { Button } from "$lib/components/ui/button";
   import * as Dialog from "$lib/components/ui/dialog";
   import * as Tabs from '$lib/components/ui/tabs/index.js';
@@ -8,7 +9,9 @@
   import RecordSheetTab from '$lib/components/record_sheet_tab.svelte';
   import army from '$lib/components/army.svelte.js';
 
-  let tabsValue = $state('faction');
+  let
+    tabsValue = $state('faction'),
+    dialogModel = $state({});
 
   function getTabsValue () {
     return tabsValue;
@@ -17,17 +20,23 @@
   function setTabsValue (newTabsValue) {
     tabsValue = newTabsValue;
   }
+  
+  function setDialogModel (modelName = '') {
+    dialogModel = army.models[modelName];
+  }
 
   $effect(() => {
     if (army.gameSizeLabel && army.factionPath) {
       setTabsValue('army');
     }
   });
+  
+  setContext('dialogContext', { setDialogModel });
 </script>
 
 <svelte:head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>Wrath of Kings Army Builder</title>
+  <title>Wrath of Kings Army Builder</title>
 </svelte:head>
 
 <Dialog.Root>
@@ -39,7 +48,7 @@
     </Tabs.List>
 
     <div id="actions" class="float-right">
-      <Dialog.Trigger>
+      <Dialog.Trigger onclick={() => setDialogModel()}>
         <span class="sr-only">Share</span>
         <i class="fa fa-share p-2"></i>
       </Dialog.Trigger>
@@ -63,13 +72,13 @@
   </Tabs.Root>
 
   <Dialog.Content>
-    <Dialog.Header>
-      <Dialog.Description>
-        <p class="mb-3">The following <abbr title="Uniform Resource Locator">URL</abbr> can be used to restore the current army you have built:</p>
-        <Textarea class="border-primary mb-3" value={army.url} readonly spellcheck="false" rows="8" />
-        <Button class="block mx-auto" variant="default" onclick={() => navigator.clipboard.writeText(army.url)}>Copy</Button>
-      </Dialog.Description>
-    </Dialog.Header>
+    {#if dialogModel === undefined}
+      <p class="mb-3">The following <abbr title="Uniform Resource Locator">URL</abbr> can be used to restore the current army you have built:</p>
+      <Textarea class="border-primary mb-3" value={army.url} readonly spellcheck="false" rows="8" />
+      <Button class="block mx-auto" variant="default" onclick={() => navigator.clipboard.writeText(army.url)}>Copy</Button>
+    {:else}
+      <img alt={dialogModel.name} src={`images/${army.factionFilename}/${dialogModel.filename}.png`}>
+    {/if}
   </Dialog.Content>
 </Dialog.Root>
 

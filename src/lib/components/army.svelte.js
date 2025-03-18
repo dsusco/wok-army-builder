@@ -11,7 +11,7 @@ class Army {
 
   #factionPath = $state('');
 
-  #factionParam = $derived.by(() => {
+  #factionFilename = $derived.by(() => {
     if (!this.#factionPath) return '';
 
     return this.#factionPath.match(/(\w+)\.json$/)[1]
@@ -68,7 +68,7 @@ class Army {
 
   #url = $derived.by(() => {
     return encodeURI(
-      `${page.url.origin}?faction=${this.#factionParam}&gameSize=${this.#gameSizeLabel}&models=` +
+      `${page.url.origin}?faction=${this.#factionFilename}&gameSize=${this.#gameSizeLabel}&models=` +
       JSON.stringify(Object.values(this.#models).reduce((url, model) => {
         url.push([model.counts.coreList].concat(model.counts.optionLists));
 
@@ -90,8 +90,8 @@ class Army {
     return this.#factionPath;
   }
 
-  get factionParam () {
-    return this.#factionParam;
+  get factionFilename () {
+    return this.#factionFilename;
   }
 
   get gameSize () {
