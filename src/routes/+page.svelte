@@ -77,7 +77,7 @@
       <Textarea class="border-primary mb-3" value={army.url} readonly spellcheck="false" rows="8" />
       <Button class="block mx-auto" variant="default" onclick={() => navigator.clipboard.writeText(army.url)}>Copy</Button>
     {:else}
-      <img class="max-w-full mx-auto" alt={dialogModel.name} src={dialogModel.cardPath}>
+      <img class="mx-auto" alt={dialogModel.name} src={dialogModel.cardPath} style="max-height:calc(90dvh - 4.5rem)">
     {/if}
   </Dialog.Content>
 </Dialog.Root>
