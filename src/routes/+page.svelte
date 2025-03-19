@@ -4,6 +4,7 @@
   import * as Dialog from "$lib/components/ui/dialog";
   import * as Tabs from '$lib/components/ui/tabs/index.js';
   import { Textarea } from "$lib/components/ui/textarea/index.js";
+  import LibraryTab from '$lib/components/library_tab.svelte';
   import FactionTab from '$lib/components/faction_tab.svelte';
   import ArmyTab from '$lib/components/army_tab.svelte';
   import RecordSheetTab from '$lib/components/record_sheet_tab.svelte';
@@ -42,6 +43,7 @@
 <Dialog.Root>
   <Tabs.Root class="w-full" bind:value={getTabsValue, setTabsValue}>
     <Tabs.List id="nav" class="w-full">
+      <Tabs.Trigger value="library">Library</Tabs.Trigger>
       <Tabs.Trigger value="faction">Faction</Tabs.Trigger>
       <Tabs.Trigger disabled={!army.initialized} value="army">Army</Tabs.Trigger>
       <Tabs.Trigger disabled={!army.initialized} value="record_sheet">Record Sheet</Tabs.Trigger>
@@ -57,6 +59,10 @@
         <i class="fa fa-print p-2"></i>
       </button>
     </div>
+
+    <Tabs.Content id="library_tab" value="library">
+      <LibraryTab />
+    </Tabs.Content>
 
     <Tabs.Content id="faction_tab" value="faction">
       <FactionTab />
@@ -96,6 +102,7 @@
       #header,
       #nav,
       #actions,
+      #library_tab,
       #faction_tab,
       #army_tab,
       #footer

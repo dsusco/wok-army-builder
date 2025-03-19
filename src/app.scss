@@ -73,3 +73,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+a {
+  &:any-link {
+    color: #8f4922;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: #bb3e00;
+    }
+  }
+}
