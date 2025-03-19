@@ -3,7 +3,7 @@
 
 <h1 class="font-serif text-4xl font-extrabold mb-3 dark:text-white">Wrath of Kings Library</h1>
 
-<p class="mb-3">Everyhing you need to play can be found here, courtesy of the <a href="https://archive.org/">Internet Archive</a></p>
+<p class="mb-3">Everyhing you need to play can be found here, courtesy of the <a href="https://archive.org/" target="_blank">Internet Archive</a></p>
 
 <h2 class="font-serif text-3xl font-extrabold mb-3 dark:text-white">Rules</h2>
 
