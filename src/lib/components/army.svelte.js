@@ -14,7 +14,7 @@ class Army {
   #factionFilename = $derived.by(() => {
     if (!this.#factionPath) return '';
 
-    return this.#factionPath.match(/(\w+)\.json$/)[1]
+    return this.#factionPath.match(/([\w-]+)\.json$/)[1];
   });
 
   #gameSize = $derived(gameSizes[this.#gameSizeLabel] || {});
@@ -36,7 +36,7 @@ class Army {
                 model.rank,
                 model.character,
                 model.cardPath,
-                this.#faction.name,
+                this.#factionFilename,
                 type,
                 this.#gameSize['Option Lists']);
           });

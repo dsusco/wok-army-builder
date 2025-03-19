@@ -6,7 +6,7 @@ class Model {
   #cardPath;
   #counts = $state({});
 
-  constructor (name = '', rank = 0, character = false, cardPath = '', faction = '', type = '', optionLists = 0) {
+  constructor (name = '', rank = 0, character = false, cardPath = '', factionFilename = '', type = '', optionLists = 0) {
     this.#name = name;
     this.#rank = rank;
     this.#character = character;
@@ -16,10 +16,10 @@ class Model {
       this.#cardPath = cardPath;
     } else {
       this.#cardPath = this.#name
-                         .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+                         .match(/[\w-]+/g)
                          .map(x => x.toLowerCase())
                          .join('_');
-      this.#cardPath = `images/cards/${faction.toLowerCase()}/${this.#cardPath}.png`
+      this.#cardPath = `images/cards/${factionFilename}/${this.#cardPath}.png`
     }
 
     this.#counts.coreList = 0;
