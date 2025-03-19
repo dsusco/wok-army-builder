@@ -92,11 +92,13 @@
     },
     { "name": "Ironeyes",
       "rank": 2,
-      "character": true
+      "character": true,
+      "cardPath": "images/cards/ironeyes.png"
     },
     { "name": "Dame Allison, The Twilight Knight",
       "rank": 2,
-      "character": true
+      "character": true,
+      "cardPath": "images/cards/dame_allison_the_twilight_knight.png"
     }
   ]
 }

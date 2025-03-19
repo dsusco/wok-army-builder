@@ -1,8 +1,11 @@
 <script>
-  import { onMount } from 'svelte';
+  import { getContext, onMount } from 'svelte';
   import { page } from '$app/state';
   import { Button } from '$lib/components/ui/button/index.js';
+  import * as Dialog from "$lib/components/ui/dialog";
   import army from '$lib/components/army.svelte.js';
+
+  const { setDialogModel } = getContext('dialogContext');
 
   let
     { name,
@@ -84,7 +87,14 @@
 </script>
 
 <div class="flex items-center gap-1 space-y-1">
-  <span class="basis-full overflow-x-hidden text-nowrap">{name} (Rank {rank}{character ? ' Character' : ''})</span>
+  <span class="basis-full overflow-x-hidden text-nowrap">
+    {name}
+    (Rank {rank}{character ? ' Character' : ''})
+    <Dialog.Trigger onclick={() => setDialogModel(name)}>
+      <span class="sr-only">Open {name} Card Dialog</span>
+      <i class="fa fa-info-circle p-3 -ml-1"></i>
+    </Dialog.Trigger>
+  </span>
   <Button class="w-10" disabled={disableDecrement} onclick={() => setCount(count-1)}>-</Button>
   <span class="text-center w-10">{count}</span>
   <Button class="w-10" disabled={disableIncrement} onclick={() => setCount(count+1)}>+</Button>

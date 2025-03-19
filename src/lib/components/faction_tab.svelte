@@ -26,14 +26,14 @@
   <Select.Trigger class="max-w-xs mx-auto mb-3">{army.gameSizeLabel ? army.gameSizeLabel : 'Please select a game size…'}</Select.Trigger>
 
   <Select.Content>
-    {#each Object.entries(gameSizes) as [gameSizeLabel]}
+    {#each Object.entries(gameSizes) as [gameSizeLabel] (gameSizeLabel)}
       <Select.Item value="{gameSizeLabel}">{gameSizeLabel}</Select.Item>
     {/each}
   </Select.Content>
 </Select.Root>
 
 <RadioGroup.Root class="max-w-sm mx-auto" bind:value={army.factionPath}>
-  {#each Object.entries(FACTIONS) as [factionPath, faction]}
+  {#each Object.entries(FACTIONS) as [factionPath, faction] (factionPath)}
     <Label>
       <RadioGroup.Item class="sr-only peer" value={factionPath} />
       <img class="box-border bg-primary/10 border border-primary cursor-pointer p-2 hover:bg-secondary/40 peer-data-[state=checked]:bg-secondary/40 ring-ring ring-offset-background ring-offset-2 peer-focus:ring-2

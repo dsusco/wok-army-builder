@@ -1,6 +1,4 @@
 <script>
-  import army from '$lib/components/model_tr.svelte';
-
   let
     { name,
       rank,
